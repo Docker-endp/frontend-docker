@@ -1,0 +1,22 @@
+{
+  "name": "frontend-main",
+  "version": "1.0.0",
+  "description": "Frontend del proyecto final",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev":"nodemon src/index.js --exec babel-node"
+  },
+  "author": "Victoria Rendon",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/node": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "nodemon": "^3.1.4"
+  }
+}
