@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/register.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <title>Registro</title>
+</head>
+
+<body>
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Caja principal de 'registro' -->
+    <div class="main">
+      <!-- Titulo Principal -->
+      <div class="titulo"><b>Registro</b></div>
+
+      <!-- Primer input -->
+      <div class="nom">
+        Nombre:
+      </div>
+      <div class="input">
+        <input type="text" class="in" id="name" required>
+      </div>
+
+      <!-- Segundo input -->
+      <div class="nom">
+        Apellido:
+      </div>
+      <div class="input">
+        <input type="text" class="in" id="lastname" required>
+      </div>
+
+      <!-- Tercer input -->
+      <div class="nom">
+        Correo:
+      </div>
+      <div class="input">
+        <input type="email" class="in" id="email" required>
+      </div>
+
+      <!-- Cuarto input -->
+      <div class="nom">
+         <center>Numero de Documento:</center>
+      </div>
+      <div class="input">
+        <input type="number" class="in" id="doc" required>
+      </div>
+
+      <!-- quinto input -->
+      <div class="nom">
+        <center>Numero de Celular:</center>
+     </div>
+     <div class="input">
+       <input type="number" class="in" id="cel" required>
+     </div>
+
+      <!-- sexto input -->
+      <div class="nom">
+        <center>Fecha nacimiento:</center>
+      </div>
+      <div class="input">
+        <input type="date" class="in" id="date" required>
+      </div>
+
+
+      <!-- Séptimo input -->
+      <div class="nom">
+        Contraseña:
+      </div>
+      <div class="input">
+        <input type="password" class="in" id="password" required>
+      </div>
+
+      
+
+      <!-- Botón de registro -->
+      <button id="btn-register" onclick="register();">Registrarse</button>
+    </div>
+  </div>
+
+  <script src="./js/register.js"></script>
+</body>
+
+</html>

@@ -12,5 +12,13 @@ server.set('view engine', 'ejs');
 
 server.set("views", path.join (__dirname,"views"))
 
+server.use(express.static(path.join(__dirname,"public")));
+
+// Error 404
+server.use("/",(req,res) =>{
+    res.render("views.error404.ejs");
+})
+
+
 
 export default server;
