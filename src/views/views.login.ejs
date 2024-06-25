@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/login.css">
+  <title>Inicio de Sesión</title>
+</head>
+
+<body>
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Contenedor del login -->
+    <div class="main">
+      <!-- Titulo -->
+      <div class="titulo"><b>Iniciar Sesión</b></div>
+
+      <!-- Primer input 'correo'-->
+      <div class="t-correo">
+        <input type="text" class="correo" placeholder="Correo" required>
+      </div>
+
+      <!-- Segundo input 'contraseña' -->
+      <div class="t-password">
+        <input type="password" class="password" placeholder="Contraseña" required>
+      </div>
+
+      <!-- Link de 'olvide mi contraseña' -->
+      <a id="forgetp" href="/password.html"> <b>Olvide mi contraseña</b> </a>
+
+      <!-- Boton 'Ingresar' -->
+      <button id="btn-ingresar"> <b>Ingresar</b></button>
+
+      <!-- Boton 'Regresar' -->
+      <button id="btn-regresar" onclick="backlogin();"> <b>Regresar</b> </button>
+    </div>
+  </div>
+  <script src="/js/regresar.js"></script>
+</body>
+
+</html>

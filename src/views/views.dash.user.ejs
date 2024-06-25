@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/logo-dif.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/usuario.css">
+    <title>Perfil de Usuario</title>
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+
+        <!-- Barra Principal -->
+        <div class="barra-principal">
+            <a href="./editar_perfilu.html">
+                <div class="img-user"><img src="./img/user.png" alt="" ></div>
+            </a>
+            <div class="nom-user">Victoria</div>
+            <div class="logo-bus"><img src="./img/lupa.png" alt="" class="lupa"></div>
+            <div class="barra-busqueda">
+                <input id="datos-busqueda" type="text" placeholder="Buscar...">
+                <div id="result-busqueda"></div>
+            </div>
+        </div>
+
+        <!-- Flecha esconder menu  -->
+        <div class="flecha">
+            <!-- Flecha esconder menu  -->
+            <div class="arrow" id="toggleArrow">&#9662;</div>
+        </div>
+
+        <!-- Barra del Medio -->
+        <div class="barra-half">
+            <!-- Menu -->
+            <div class="barra-menu" id="menu">
+                <a href="#" class="elemento" target="_blank">Carrtito de Compras</a>
+                <a href="./lista_deseos.html" class="elemento" target="_blank">Lista de Deseos</a>
+                <a href="#" class="elemento" target="_blank">Productos Disponibles</a>
+                <a href="./historial.html" class="elemento" target="_blank">Historial</a>
+                <a href="#" class="elemento" target="_blank">Boletín de Ofertas</a>
+                <!-- Funciona por medio de la funcion 'MostrarServicio' -->
+                <a href="" class="elemento" onclick="mostrarServicio(event);">Servicio al Cliente</a>
+                <a href="#" class="elemento" target="_blank">Cerrar Sesión&nbsp;&nbsp;
+                    <img src="./img/cerrar-sesion.png" alt="" class="cerrar-sesion">
+                </a>
+            </div>
+
+            <!-- Ventana de Servicio al cliente -->
+            <div class="main" id="main">
+                <div class="ventana" id="ventana">
+                    <div class="barra" id="barra">
+                        <div class="titulo">Servicio al Cliente</div>
+                    </div>
+                    <div class="whatsapp">
+                        <img src="./img/whatsapp.png" alt="" class="img1">&nbsp;&nbsp;
+                        <b>3234377424</b>
+                    </div>
+                    <div class="gmail">
+                        <img src="./img/gmail.png" alt="" class="img1">&nbsp;&nbsp;
+                        <b>licireriaGuachirongo@gmail.com</b>
+                    </div>
+                    <div class="insta">
+                        <img src="./img/instagram.png" alt="" class="img1">&nbsp;&nbsp;
+                        <b>LGuachirongo_SMV</b>
+                    </div>
+                    .
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/usuario.js"></script>
+</body>
+
+</html>
