@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/regidtrados.clientes.css">
+    <title>Clientes</title>
+</head>
+<body>
+    
+    <div class="content">
+         <!--Encabezado -->
+         <div class="barra-principal">
+            <!-- foto del usuario -->
+            <div class="img-user"><img src="../img/user.png" alt=""></div>
+            <!-- nombre del usuario -->
+            <div class="nom-user">Victoria</div>
+            <!-- Logo d buscar -->
+            <div class="logo-bus"><img src="../img/lupa.png" alt="" class="lupa"></div>
+            <!-- barra de busqueda -->
+            <div class="barra-busqueda">
+                <input id="datos-busqueda" type="text" placeholder="Buscar...">
+                <div id="result-busqueda"></div>
+            </div>
+        </div>
+
+        <!-- Barra Secundaria -->
+        <div class="barra-secundaria">
+            <!-- tituo principla de la pagina -->
+            <div class="nom-page">
+                <p><h3>Nuestros Clientes</h3></p>
+            </div>
+            <!-- boton -->
+            <div class="btn-perfil">
+                <a href="" class="elemento">Mi Perfil</a>
+            </div>
+        </div>
+
+        <!-- clientes -->
+         <div class="clientes">
+            <table border="1">
+                <!-- titulos -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE DEL CLIENTE</th>
+                        <th>CORREO</th>
+                        <th>CELULAR</th>
+                        <th>ACCIONES</th>
+
+                    </tr>
+                </thead>
+                <tbody id="data">
+                    <!-- <tr>
+                        <td>Fila 1, Celda 1</td>
+                        <td>Fila 1, Celda 2</td>
+                        <td>Fila 1, Celda 3</td>
+                        <td> <button class="btn-trash"> <img src="../img/borrar.png" alt="" class="trash"> </button> </td>
+                    </tr> -->
+                    
+                    
+                </tbody>
+            </table>
+
+            
+            <!-- Contenedor de la ventana eliminar -->
+        
+            <!-- Ventana 'eliminar' -->
+            <div class="delete">
+                <!-- Encabezado -->
+                <div class="head">
+                    <div class="btn-close" id="btn-close">
+                        &times;
+                    </div>
+                </div>
+                <!-- Cuerpo -->
+                <div class="body">
+                    <h3 class="text-delete">
+                        ¿Desea eliminar el cliente definitivamente?
+                    </h3>
+                </div>
+                <div class="footer">
+                    <button class="btn-confirm yes" id="btn-yes">SI</button>
+                    <button class="btn-confirm no" id="btn-not">NO</button>
+                </div>
+
+            </div>
+         </div>
+         
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/regidtrados.clientes.js"></script>
+</body>
+</html>

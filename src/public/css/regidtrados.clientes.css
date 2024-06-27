@@ -1,0 +1,231 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url(../img/burbujas.jpg);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Encabezado */
+.barra-principal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.678);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 4fr 2fr;
+    grid-template-rows: 1fr ;
+}
+
+/* Logo de buscar */
+.lupa{
+    width: 25px;
+}
+
+/* Barra de busqueda */
+.barra-busqueda input[type="text"] {
+    flex: 2;
+    color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+    
+}
+
+/* Contenedores de: foto de perfil, barra de busqueda y logo de busqueda 'lupa' */
+.img-user, .barra-busqueda, .logo-bus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+}
+
+/* Posicion del logo */
+.logo-bus{
+    display: flex;
+    justify-content: end;
+}
+
+/* Titulos: titulo principla y nombre del usuario */
+.nom-page, .nom-user{
+    color: rgb(255, 255, 255);
+    font-size: 29px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+/* Barra del titulo pricipal y boton */
+.barra-secundaria{
+    width: 100%;
+    height: 70px;
+    margin-top: 100px;
+    background-color: #f2ce6384;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: 1fr ;
+    border-top: solid #F2CF63 2px;
+    border-bottom: solid #F2CF63 2px;
+
+}
+
+/* DIV del Boton 'mi perfil' */
+.btn-perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* quitar estilos predeterminadols del Boton 'mi perfil' */
+a{
+    text-decoration: none;
+    background: none;
+    padding: 0 ;
+}
+
+/* Boton 'mi perfil' */
+.btn-perfil a{
+    color: white;
+    border-left: solid white 3px;
+    border-right: solid white 3px;
+    font-weight: bold;
+    font-size: 23px;
+    padding: 5px;
+    margin-left: 200px;
+}
+
+/* Boton 'mi perfil' al pasar el cursor */
+.btn-perfil a:hover{
+    transition: 400ms;
+    border: solid #F2CF63 4px;
+    padding: 7px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 27px;
+}
+
+/* Content del historial */
+.clientes {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    grid-row: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tabla */
+.clientes table {
+    width: 65%;
+    border-collapse: collapse;
+}
+
+/*  filas */
+.clientes th, .clientes td {
+    padding: 8px;
+    text-align: center;
+}
+
+/* Primera fila */
+.clientes th {
+    height: 45px;
+    background-color: #F2CF63;
+    color: rgb(0, 0, 0);
+}
+
+/* Filas */
+.clientes td{
+    height: 30px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.267);
+}
+.btn-trash {
+    background-color: rgb(255, 59, 59);
+    color: white;
+    border: none;    
+    padding: 10px;      
+    cursor: pointer; /* Cambia el cursor al de puntero */
+    outline: none;   /* Elimina el contorno cuando el botón está enfocado */
+}
+.trash{
+    width: 40px;
+}
+
+.delete{
+    width: 370px;
+    height: 220px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    top: 190px;
+    right: 480px;
+}
+
+.head{
+    padding: 10px;
+    border-bottom: 1px solid red;
+    display: flex;
+    justify-content: end;
+}
+.btn-close{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+}
+/* Cuerpo, texto */
+.body{
+    padding: 20px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+}
+.text-delete {
+    text-align: center;
+    font-size: 23px; 
+}
+
+/* Pie, botones, si y no */
+.footer{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.btn-confirm{
+    width: 50px;
+    height: 30px;
+    border: none;
+    background-color: red;
+    border: solid black 1px;
+    border-radius: 5px;
+    padding: 5px;
+
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+}
+.btn-confirm:hover {
+    cursor: pointer;
+    background-color: rgb(126, 126, 126);
+}
+
+.yes{
+    margin-right: 20px;
+}
