@@ -14,7 +14,7 @@ const register = () => {
 
 
     // Verificar que lo campos no esten vacios
-    if (!name || !lastname || !email || !doc || !password || !date ||!cel) {
+    if (!name || !lastname || !email || !doc || !password || !date || !cel) {
         Swal.fire("Hay campos vacios!");
         return;
     };
@@ -36,16 +36,37 @@ const register = () => {
             celular: cel
         })
     };
-    
-     fetch(urlApi, options)
+
+    fetch(urlApi, options)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if (data.error == false) {
+                // alerta usuario registrado
+                Swal.fire({
+                    icon: "success",
+                    title: "Haz sido registrado Exitosamente",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+                setTimeout(function () {
+                    window.location.href = '/login';
+                }, 2000);
+            } else {
+
+                Swal.fire({
+                    icon: "error",
+                    title: "El correo ya existe, Intenta con otro",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+            }
         })
         .catch(err => {
             console.log("Tenemos un problema", err);
 
         });
-            
-    
+
+
 }

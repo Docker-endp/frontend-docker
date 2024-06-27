@@ -1,11 +1,11 @@
 import { Router } from "express";
+import { perfilUsuario, perfilVendedor } from "../controllers/controller.dash";
 
 
 const rutaDash = Router();
 
-rutaDash.get("/principal", (req, res)=>{ 
-    res.send("<h1 > Usuarios </h1>");
-    })
+rutaDash.get("/perfilu", perfilUsuario )
+rutaDash.get("/perfilv", perfilVendedor )
 
 export default rutaDash;
 
