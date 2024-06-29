@@ -2,12 +2,16 @@ import express from "express"
 import ruta from "./routes/index.js";
 import path from "path"
 import ejs from "ejs"
+import { config } from "dotenv";
+config();
 
 const server = express();
 
 server.use("/", ruta)
 
 // midlleware
+server.set("port", process.env.PORT);
+
 server.set('view engine', 'ejs');
 
 server.set("views", path.join (__dirname,"views"))
