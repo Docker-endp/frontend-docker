@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/burbujas5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Caja de registro */
+  .main {
+    width: 37%;
+    height: 87%;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(8, auto);
+    background: rgba(250, 250, 250, 0.3);
+    backdrop-filter: blur(0.4rem);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #F2D064;
+  }
+  
+  /* Título 'Registro' */
+  .titulo {
+    grid-column: 1 / span 2;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Título de los inputs */
+  .nom {
+    width: 97%;
+    height: 83%;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: #F2D064;
+    border: #000000 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  
+  /* Contenedor de los inputs */
+  .input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Inputs */
+  .in {
+    width: 70%;
+    height: 80%;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #F2D064;
+    background: none;
+    color: white;
+  }
+  
+  /* Opciones de Sexo */
+  option {
+    background-color: #F2D064;
+    color: #000000;
+  }
+  
+  /* Términos y Condiciones */
+  .check {
+    grid-column: 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  /* Botón de registro */
+  #btn-register {
+    grid-column: 1 / span 2;
+    padding: 5px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background-color: #F2D064;
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  
+  #btn-register:hover {
+    background-color: #e0c157;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Para pantallas medianas */
+  @media (max-width: 768px) {
+    .main {
+      width: 55%;
+     height: 87%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  
+    .titulo {
+      font-size: 1.5rem;
+    }
+  
+    .nom {
+      font-size: 0.9rem;
+      margin-left: 10px;
+    }
+  
+    .in {
+      font-size: 0.9rem;
+    }
+  
+    .text-checkbox {
+      font-size: 0.9rem;
+    }
+  
+    #btn-register {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
+  
+  
+  /* Para pantallas pequeñas */
+  @media (max-width: 480px) {
+    .main {
+      width: 90%;
+    }
+  
+    .titulo {
+      font-size: 1.2rem;
+    }
+  
+    .nom {
+      font-size: 0.8rem;
+      margin-left: 5px;
+    }
+  
+    .in {
+      font-size: 0.8rem;
+    }
+  
+    .text-checkbox {
+      font-size: 0.8rem;
+    }
+  
+    #btn-register {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }

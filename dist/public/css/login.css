@@ -1,0 +1,204 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  /* Tipo de letra */
+  body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/burbujas5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Contenedor de Login */
+  .main {
+    width: 35%;
+    height: 80%;
+    border: #F2D064 2px solid;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    background: rgba(250, 250, 250, 0.3);/* Ajuste de la transparencia */
+    backdrop-filter: blur(0.4rem);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Titulo  'Iniciar sesión */
+  .titulo {
+    color: white;
+    font-size: 2.2rem;/* Ajuste de tamaño de fuente para hacerlo responsivo */
+    text-align: center;
+  }
+  
+  /* Primer y segundo contenedor de 'input' */
+  .t-correo,
+  .t-password {
+    width: 87%;
+    height: 80%;
+    margin-left: 25px;
+  }
+  
+  /* input */
+  ::placeholder{
+    color: rgba(255, 255, 255, 0.733);
+    
+  }
+  /* inputs 'correo y contraseña' */
+  .correo,
+  .password {
+    width: 87%;
+    height: 70%;
+    margin-left: 25px;
+    font-size: 1.3rem;
+    border: none;
+    border-bottom: 2px solid #F2D064;
+    background: none;
+  }
+  
+  
+  /* 'Olvide contraseña' */
+  #forgetp {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: white;
+    color: white;
+    font-size: 1.1rem;
+  }
+  
+  /* Boton 'Ingresar' */
+  #btn-ingresar {
+    width: 40%;
+    height: 70%;
+    margin: auto;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    border-radius: 15px;
+    background-color: #F2D064;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Boton 'Regresar' */
+  #btn-regresar {
+    width: 50%;
+    height: 70%;
+    margin: auto;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    border-radius: 15px;
+    background-color: #F2D064;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* al pasar el cursor por los botones */
+  #btn-ingresar:hover,
+  #btn-regresar:hover {
+    width: 43%;
+    height: 71%;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    border-radius: 15px;
+  }
+  
+  /*Para pantallas medianas */
+  @media (max-width: 768px) {
+    /* Contenedor de Login */
+  .main {
+    width: 50%;
+  }
+  
+    /* Titulo  'Iniciar sesión */
+    .titulo {
+      font-size: 1.5rem;
+    }
+  
+    /* inputs 'correo y contraseña' */
+    .correo,
+    .password {
+      font-size: 0.9rem;
+      margin-left: 10px;
+    }
+  
+    /* 'Olvide contraseña' */
+    #forgetp {
+      font-size: 0.9rem;
+    }
+  
+    /* Boton 'Ingresar' */
+  #btn-ingresar {
+    width: 40%;
+    height: 70%;
+    font-size: 1rem;
+  }
+  
+  /* Boton 'Regresar' */
+  #btn-regresar {
+    width: 50%;
+    height: 70%;
+    font-size: 1rem;
+  }
+    
+  }
+  
+  /* Para pantallas pequeñas */
+  @media (max-width: 480px) {
+      /* Contenedor de Login */
+  .main {
+    width: 80%;
+  }
+  
+  /* Titulo  'Iniciar sesión */
+    .titulo {
+      font-size: 1.2rem;
+    }
+  
+    /* inputs 'correo y contraseña' */
+    .correo,
+    .password {
+      font-size: 0.8rem;
+      margin-left: 5px;
+    }
+  
+    /* 'Olvide contraseña' */
+    #forgetp {
+      font-size: 0.8rem;
+    }
+  
+     /* Boton 'Ingresar' */
+  #btn-ingresar {
+    width: 40%;
+    height: 60%;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+  
+  /* Boton 'Regresar' */
+  #btn-regresar {
+    width: 50%;
+    height: 60%;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+  }

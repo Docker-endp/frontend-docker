@@ -1,91 +1,108 @@
-"use strict";
-
-var btnTrash = document.querySelectorAll(".btn-trash");
-var btnDelete = document.querySelector(".delete");
-var noEliminar = document.getElementById("btn-not");
-var btnCerrar = document.getElementById("btn-close");
+const btnTrash = document.querySelectorAll(".btn-trash");
+const btnDelete = document.querySelector(".delete");
+const noEliminar = document.getElementById("btn-not");
+const btnCerrar = document.getElementById("btn-close");
 
 // Añade un evento de clic a cada botón de 'Abrir Ventana'
 btnTrash.forEach(function (button) {
-  button.addEventListener("click", function () {
-    btnDelete.style.display = 'block';
-  });
+    button.addEventListener("click", function () {
+        btnDelete.style.display = 'block';
+    });
 });
+
 btnCerrar.addEventListener("click", function () {
-  btnDelete.style.display = 'none';
+    btnDelete.style.display = 'none';
 });
+
 noEliminar.addEventListener("click", function () {
-  btnDelete.style.display = 'none';
+    btnDelete.style.display = 'none';
 });
 
 // tabla
-var url = "http://localhost:3000/api/user";
+let url = "http://localhost:3000/api/user";
 
 // MOSTRAR
-fetch(url).then(function (res) {
-  return res.json();
-}).then(function (data) {
-  if (data.error) {
-    console.error("error al mostrar datos", data);
-  } else {
-    mostrar(data.respuesta[0]);
-  }
-})["catch"](function (error) {
-  return console.log(error);
-});
-var mostrar = function mostrar(data) {
-  console.log(data);
-  var body = "";
-  for (var i = 0; i < data.length; i++) {
-    body += "\n    \n            <tr>\n                <td>".concat(data[i].ID, "</td>\n                <td>").concat(data[i].NOMBRE, "</td>\n                <td>").concat(data[i].CORREO, "</td>\n                <td>").concat(data[i].CELULAR, "</td>\n                <td> <button class=\"btn-trash\" onclick=\"eliminar(event);\"> ELIMINAR </button> </td>\n            </tr>                        \n    ");
-  }
-  document.getElementById("data").innerHTML = body;
+fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) {
+            console.error("error al mostrar datos", data);
+        } else {
+            mostrar(data.respuesta[0]);
+        }
+    })
+    .catch(error => console.log(error));
+
+const mostrar = (data) => {
+    console.log(data);
+
+    let body = "";
+
+    for (let i = 0; i < data.length; i++) {
+        body += `
+    
+            <tr>
+                <td>${data[i].ID}</td>
+                <td>${data[i].NOMBRE}</td>
+                <td>${data[i].CORREO}</td>
+                <td>${data[i].CELULAR}</td>
+                <td> <button class="btn-trash" onclick="eliminar(event);"> ELIMINAR </button> </td>
+            </tr>                        
+    `;
+    }
+
+    document.getElementById("data").innerHTML = body;
 };
 
 // ELIMINAR
-var eliminar = function eliminar(event) {
-  var eliminar_id = event.target.parentElement.parentElement.children[0].innerText;
-  console.log(eliminar_id);
-  Swal.fire({
-    title: "Estas seguro?",
-    text: "¡No podrás revertirlo!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Si, eliminar!"
-  }).then(function (result) {
-    if (result.isConfirmed) {
-      eliminarApi(eliminar_id);
-      Swal.fire({
-        title: "¡Borrado!",
-        text: "El usuario ha sido eliminado.",
-        icon: "success"
-      });
-    }
-  });
-};
-var eliminarApi = function eliminarApi(ID) {
-  // const token = sessionStorage.getItem("token");
-  // "x-access-token": token
+const eliminar = (event) => {
+    const eliminar_id = event.target.parentElement.parentElement.children[0].innerText;
+    console.log(eliminar_id);
+  
+    Swal.fire({
+      title: "Estas seguro?",
+      text: "¡No podrás revertirlo!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, eliminar!",
 
-  var options = {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      id: ID
-    })
+    }).then((result) => {
+      if (result.isConfirmed) {
+        eliminarApi(eliminar_id);
+        Swal.fire({
+          title: "¡Borrado!",
+          text: "El usuario ha sido eliminado.",
+          icon: "success",
+        });
+      }
+    });
   };
-  fetch(url, options).then(function (res) {
-    return res.json();
-  }).then(function (data) {
-    if (data.error == false) {
-      Swal.fire(data.respuesta);
-      window.location.href = "/dash/clientes";
-    }
-  })["catch"](function (err) {
-    console.log("Tenemos un problema", err);
-  });
-};
+  
+  const eliminarApi = (ID) => {
+    // const token = sessionStorage.getItem("token");
+    // "x-access-token": token
+  
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: ID
+      }),
+    };
+  
+    fetch(url, options)
+      .then(res => res.json())
+      .then(data => {
+        if (data.error == false) {
+          Swal.fire(data.respuesta);
+          window.location.href = "/dash/clientes";
+        }
+      })
+      .catch(err => {
+        console.log("Tenemos un problema", err);
+      });
+  };

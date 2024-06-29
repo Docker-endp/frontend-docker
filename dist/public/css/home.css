@@ -1,0 +1,286 @@
+html {
+    scroll-behavior: smooth;
+    /* se utiliza para habilitar el desplazamiento suave (smooth scrolling) en la página. Esto significa que cuando el usuario hace clic en un enlace que lleva a una sección diferente de la misma página (anclajes), el desplazamiento entre las secciones se realiza de manera fluida y no de forma brusca. */
+}
+
+/* Para todo el diseño */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    /* Evita el desplazamiento horizontal */
+}
+
+/* Diseño del encabezado */
+header {
+    position: fixed;
+    /* Lo deja fijo incluso si se mueve la página */
+    top: 0;
+    /* Fijo en la parte de arriba de la página */
+    left: 0;
+    /* Fijo en la parte izquierda de la página */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* Ajusta para alinear elementos al borde del contenedor */
+    align-items: center;
+    padding: 30px;
+    background: #00000096;
+    color: #fff;
+    z-index: 10;
+    /* Coloca el encabezado por encima de todos los demás elementos */
+    transition: background 0.5s;
+    /* Transición suave para el cambio de fondo */
+}
+
+/* Aplicar estilo al encabezado cuando tiene la clase 'abajo' */
+header.abajo {
+    background: #f68f34c2;
+    /* Cambia el fondo cuando se hace scroll */
+    padding: 20px;
+}
+
+/* Para 'Dataflow' */
+header .logo {
+    font-weight: bold;
+    /* Poner el texto del logotipo en negrita */
+    letter-spacing: 2px;
+    font-size: 2em;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* tamaño de la imagen en pantalla grande */
+img {
+    width: 350px;
+}
+
+/* Diseño de la lista (items del encabezado) */
+nav ul {
+    display: flex;
+    list-style: none;
+    /* Elimina los estilos de lista por defecto */
+}
+
+/* Elementos de la lista */
+nav ul li {
+    margin-left: 20px;
+}
+
+/* Enlaces de la lista */
+nav ul li a {
+    margin: 0 15px;
+    text-decoration: none;
+    /* Establece el estilo del texto de los enlaces */
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    /* Establece el peso de la fuente de los enlaces */
+    transition: color 0.3s;
+    /* Transición suave para el cambio de color del enlace */
+}
+
+/* Estilos para las cajas */
+.box {
+    width: 100%;
+    min-height: 100vh;
+    /* Altura mínima del 100% de la pantalla */
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    /* Establece la opacidad de las cajas */
+    transform: translateX(-100%);
+    /* Fuera de la pantalla a la izquierda */
+    transition: opacity 1s, transform 1s;
+    /* Transición suave para opacidad y posición */
+    box-sizing: border-box;
+}
+
+.box.right {
+    transform: translateX(100%);
+    /* Fuera de la pantalla a la derecha */
+}
+
+.box.visible {
+    opacity: 1;
+    /* Visible */
+    transform: translateX(0);
+    /* En su posición original */
+}
+
+.box.hidden {
+    opacity: 0;
+    /* Invisible */
+    transform: translateX(100%);
+    /* Fuera de la pantalla a la derecha */
+    transition: opacity 1s, transform 1s;
+    /* Transición suave para opacidad y posición */
+}
+
+/* Contenido para la caja N°1*/
+.box1 {
+    opacity: 1;
+    /* Visible inicialmente */
+    transform: translateX(0);
+    /* En su posición original */
+}
+
+/* Fondos para la caja numero 2 'Nosotros' y numero 3 'servicios' */
+.box2,
+.box3 {
+    background-image: url("../img/burbujas.jpg");
+}
+
+/* Contenido de la caja 2 */
+.boxn2 {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    background-color: #ffffff59;
+    border: solid #F2CF63 2px;
+    border-radius: 20px;
+    color: #000000;
+    padding: 16px;
+    word-wrap: break-word;
+    /* Establece el ajuste de texto de la caja 2 */
+    /* Asegura que el texto largo se ajuste */
+}
+
+/* Titulo de la caja 2 */
+h2 {
+    font-size: 40px;
+    color: #F2CF63;
+}
+
+/* Parrafo numero 1 de la caja 2 */
+.p1-box2 {
+    font-size: 25px;
+}
+
+/* Parrafo numero 2 de la caja 2 */
+.p2-box2 {
+    font-size: 23px;
+}
+
+/* CAJA 3 */
+.boxn3 {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    background-color: #ffffff59;
+    border: solid #F2CF63 2px;
+    border-radius: 20px;
+    color: #000000;
+    padding: 7px;
+    word-wrap: break-word;
+    /* Establece el ajuste de texto de la caja 2 */
+    /* Asegura que el texto largo se ajuste */
+}
+
+/* Parrafo de la caja 3 */
+.p3 {
+    font-size: 22px;
+}
+
+/* Estilos específicos para el botón de menú en pantallas pequeñas */
+.navbar-toggler {
+    border: none;
+    color: #fff;
+}
+
+/* Asegura que el ícono del botón de menú sea visible */
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+    width: 20px;
+}
+
+/* Ocultar el botón de menú en pantallas grandes */
+.navbar-toggler {
+    border: none;
+    color: #fff;
+    display: none;
+    /* Ocultar en pantallas grandes */
+}
+
+/* Responsive para el menu en pantallas pequeñas */
+@media (max-width: 992px) {
+    .navbar-toggler {
+        display: block;
+        /* Mostrar en pantallas pequeñas */
+    }
+
+    nav ul {
+        display: none;
+        /* Ocultar menú normal en pantallas pequeñas */
+    }
+}
+
+/* Estilos para el menú lateral */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    /*  ocultar el desbordamiento horizontal de un elemento */
+    transition: 0.5s;
+    /* transicion al  ostrar el slidebar */
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #F2CF63;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+
+    /* subcajas 2 y 3 */
+    .boxn2,
+    .boxn3 {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Logo Principal */
+    img {
+        width: 200px;
+    }
+
+    /* Titulos de las subcajas */
+    h2 {
+        font-size: 25px;
+        /* Ajustar el tamaño del texto del título */
+    }
+
+    /* Parrafos de las subcajas 2 y 3 */
+    .p1-box2,
+    .p2-box2,
+    .p3 {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link de Bootstrap (css) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>Licoreria Guachirongo</title>
+</head>
+
+<body>
+    <!-- Barra Principal/Encabezado -->
+    <header>
+        <a href="#" class="logo"><img src="./img/dataflow-poppins-orange-.png" alt=""> </a>
+
+        <!-- Nav con Bootstrap para el menú responsive -->
+        <nav class="navbar-expand-lg">
+
+            <!-- Botón para mostrar el menú en pantallas pequeñas -->
+            <button class="navbar-toggler" type="button" id="menuToggle">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú de navegación para pantallas grandes -->
+            <ul class="navbar-nav ms-auto d-none d-lg-flex">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Iniciar Sesión</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menú Lateral(sidebar) para pantallas pequeñas -->
+    <div id="sidebar" class="sidebar d-lg-none">
+        <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="/login">Iniciar Sesión</a>
+        <a href="/register">Registrarse</a>
+    </div>
+
+    <!-- CONTENIDO N°1 -->
+    <div class="box box1" id="inicio">
+        <!-- Carrusel con bootstrap -->
+        <div id="carouselboxone" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselboxone" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselboxone" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselboxone" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/PROMOCION 1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/PROMOCION 2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/PROMOCION 3.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+
+            <!-- Botón: Permite pasar de adelante para atras y viceversa -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselboxone" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselboxone" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div><!-- cierre 'box1' -->
+
+    <!-- CONTENIDO N°2 -->
+    <div class="box box2" id="nosotros">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="boxn2">
+                <center>
+                    <h2><b>Acerca de Nosotros</b></h2>
+                    <p class="p1-box2">
+                        <b>¡Bienvenidos a tu tienda de licores de confianza!</b>
+                    </p>
+                    <p class="p2-box2">
+                        Somos apasionados por las bebidas de calidad
+                        y nos dedicamos a ofrecer una selección exclusiva de vinos, cervezas artesanales y destilados
+                        premium que te harán descubrir nuevos placeres. Con años de experiencia,
+                        nuestro equipo de expertos está listo para asesorarte y ayudarte a encontrar el licor
+                        perfecto para cada ocasión. Ven y conoce quiénes somos, porque en esta página no solo vendemos
+                        licores,
+                        sino experiencias inolvidables.
+                    </p>
+                    <p class="p1-box2">
+                        <b>¡Salud!</b>
+                    </p>
+                </center>
+            </div>
+        </div>
+    </div><!-- cierre 'box2' -->
+
+    <!-- CONTENIDO N°3 -->
+    <div class="box box3" id="servicios">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="boxn3">
+                <center>
+                    <h2><b>Nuestros Servicios</b></h2>
+
+                    <p class="p3">
+                        <b>
+                            ¿Buscas una experiencia de compra excepcional?
+                            <br>
+                            ¡La has encontrado! Te ofrecemos una amplia gama de servicios
+                            que harán que tu experiencia de compra sea inigualable.
+                        </b>
+                    </p>
+                </center>
+
+                <p class="p3">
+                    🌟 <b>Reserva tus productos favoritos:</b> ¡Aparta los productos que deseas llevar con solo un clic!
+                    Asegúrate de que nunca se agoten tus artículos preferidos.
+                    <br>
+                    ❤️ <b>Añade a Lista de Deseos:</b> ¿No estás listo para comprar aún? No hay problema. Añade
+                    productos a
+                    tu
+                    lista
+                    de deseos y vuelve a ellos cuando estés listo para comprar.
+                    <br>
+                    🛒 <b>Carrito de Compras:</b> ¡Llenar tu carrito nunca fue tan fácil! Añade productos a tu carrito
+                    de
+                    compras y finaliza tu reserva de productos en cualquier momento.
+                    <br>
+                    🍷 <b>Visibilidad de Licores:</b> Disfruta de nuestra selección exclusiva de licores. Encuentra tus
+                    bebidas
+                    favoritas y descubre nuevas opciones para tus celebraciones.
+                    <br>
+                    🔥 <b>Ofertas Exclusivas:</b> ¡No te pierdas nuestras ofertas exclusivas! Aprovecha los descuentos y
+                    promociones especiales solo para nuestros clientes.
+                    <br>
+                    <br>
+                    <b>
+                        ... ¡Y muchos más servicios diseñados para tu comodidad y satisfacción!
+                    </b>
+                </p>
+            </div>
+        </div>
+    </div> <!-- cierre de 'box3' -->
+
+    <!-- linl de Bootstrap (js)-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+
+</html>
