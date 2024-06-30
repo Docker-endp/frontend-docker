@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(../img/fon\ 2.jpg);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor principal */
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 8fr ;
+}
+
+/* tamaños */
+.barra-principal, .barra-half, .barra-menu, .main, .barra{
+    width: 100%;
+    height: 100%;
+}
+
+/* Encabezado */
+.barra-principal{
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 4fr 2fr;
+    grid-template-rows: 1fr ;
+    border-bottom: solid #F2CF63 2px;
+}
+
+/* Logo de la lupa */
+.lupa{
+    width: 25px;
+}
+
+/* Barra de busqueda */
+.barra-busqueda input[type="text"] {
+    flex: 2;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Posicion de los divs de la foto del usuario, barra de busqueda y la lupa  */
+.img-user, .barra-busqueda, .logo-bus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+}
+
+/* Nombre del usuario */
+.nom-user{
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+}
+
+/* Espacio del medio */
+.barra-half{
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1.5fr 6fr;
+    grid-template-rows: 1fr ;
+}
+
+
+/* Menu */
+.barra-menu{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* items del menu */
+.elemento{
+    width: 165px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-size: 23px;
+    border-radius: 0 30px 30px 0;
+    background-color: #F2CF63;
+    margin: 20px;
+    border: solid #F2CF63 2px;
+    font-weight: bold;
+    text-decoration: none; /* Elimina el subrayado */
+}
+.elemento1{
+    width: 165px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-size: 23px;
+    border-radius: 0 30px 30px 0;
+    background-color: #ffffff;
+    margin: 20px;
+    border: solid #F2CF63 2px;
+    font-weight: bold;
+    text-decoration: none; /* Elimina el subrayado */
+}
+/* Items el menu al pasar el cursor */
+.elemento:hover{
+    transition: 400ms;
+    border: 4px solid rgb(255, 255, 255);
+    font-size: 25px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+.elemento1:hover{
+    transition: 400ms;
+    border: 4px solid rgb(255, 255, 255);
+    font-size: 25px;
+    background-color: #F2CF63;
+    color: rgb(255, 255, 255);
+}
+/* Contenedor de las ventanas de editar perfil */
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente los elementos */
+}
+
+
+/* encabezado de la primera ventana  */
+.barra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom: solid #ffffff 3px;
+    margin-bottom: 15px;
+}
+
+/* foto del perfil */
+.img-ventana{
+    width: 90px;
+    margin-left: 15px;
+}
+
+/* Nombre de usuario */
+.nom-ventana{
+    color: rgb(0, 0, 0);
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* segunda ventana 'ACTUALIZAR DATOS' */
+.second-ventana {
+    width: 70%;
+    max-height: 70vh; /* Limitamos la altura máxima para evitar desbordamientos verticales */
+    overflow-y: auto; /* Agregamos scroll vertical si es necesario */
+    padding: 20px;
+    background-color:#f2ce63b7;
+    border: 3px solid #ffffff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos de manera vertical */
+    justify-content: center; /* Centra verticalmente los elementos */
+    align-items: center; /* Centra horizontalmente los elementos */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.5fr repeat(4, 1.5fr); 
+}
+
+/* Contenido de la ventanada 2 */
+.content-one{
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* INPUTS */
+.content-one {
+    margin-bottom: 15px;
+}
+.content-one input {
+    width: 30%;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #F2CF63;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-left: 50px;
+}
+.content-one input::placeholder {
+    color: #00000094;
+}

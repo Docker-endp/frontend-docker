@@ -15,3 +15,18 @@ export const register = (req, res) =>{
 export const login = (req, res) =>{
     res.render("views.login.ejs");
 };
+
+// Olvide contraseña PASO 1
+export const forgotone = (req, res) =>{
+    res.render("views.forgot.password.one.ejs");
+};
+
+// Olvide contraseña PASO 2
+export const forgottwo = (req, res) =>{
+    res.render("views.forgot.password.two.ejs");
+};
+
+// Olvide contraseña PASO 3
+export const forgotthree = (req, res) =>{
+    res.render("views.forgot.password.three.ejs");
+};
