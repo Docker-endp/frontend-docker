@@ -125,6 +125,18 @@ body{
     background-color: #F2CF63;
     color: rgb(255, 255, 255);
 }
+.btn-change {
+    width: 165px;
+    background-color: #F27244;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    margin-left: 300px;
+    border: none;    
+    padding: 10px;      
+    cursor: pointer; /* Cambia el cursor al de puntero */
+    outline: none;   /* Elimina el contorno cuando el botón está enfocado */
+    font-weight: bold;
+}
 /* Contenedor de las ventanas de editar perfil */
 .main{
     display: flex;
