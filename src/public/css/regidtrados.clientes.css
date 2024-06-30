@@ -31,15 +31,15 @@ body{
     width: 25px;
 }
 
-/* Barra de busqueda */
-.barra-busqueda input[type="text"] {
+ /*  Barra de busqueda */
+ .barra-busqueda input[type="text"] {
     flex: 2;
-    color: rgb(0, 0, 0);
+    border-radius: 10px;
     padding: 10px;
     border: none;
     outline: none;
-    
-}
+  
+  }
 
 /* Contenedores de: foto de perfil, barra de busqueda y logo de busqueda 'lupa' */
 .img-user, .barra-busqueda, .logo-bus{

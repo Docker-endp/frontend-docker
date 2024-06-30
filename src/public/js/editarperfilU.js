@@ -1,5 +1,5 @@
 // URL
-const url = "http://localhost:3000"
+const url = "https://backend-pf-p13h.onrender.com"
 const token = sessionStorage.getItem("token");
 
 
@@ -64,12 +64,12 @@ const modificar = () => {
 }
 
 // npmbre de usuario
-const nomUser = jwtDecode(token)
+// const nomUser = jwtDecode(token)
 
 
-var elementos = document.querySelectorAll("#nomUser");
+// var elementos = document.querySelectorAll("#nomUser");
 
-  // Recorrer cada elemento y asignar el valor de la variable
-  elementos.forEach(function(elemento) {
-    elemento.innerHTML = nomUser.CORREO;
-  });
+//   // Recorrer cada elemento y asignar el valor de la variable
+//   elementos.forEach(function(elemento) {
+//     elemento.innerHTML = nomUser.CORREO;
+//   });
