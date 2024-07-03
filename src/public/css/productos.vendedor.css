@@ -249,8 +249,8 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 43px;
+    height: 43px;
     border-radius: 50%;
     background-color: rgb(255, 95, 95);
     cursor: pointer;
@@ -387,12 +387,12 @@ a {
     align-items: center;
     justify-content: center;
     gap: .1em;
-    padding: 8px;
+    padding: 6px;
+    height: 40px;
     color: white;
     background: linear-gradient(0deg, rgb(209, 109, 27), rgb(255, 160, 71));
     border: none;
     outline: none;
-    box-shadow: 0 .5em .5em -.4em rgb(0, 0, 0, .5);
     border-radius: 20em;
     cursor: pointer;
     transition: .5s;
@@ -427,9 +427,9 @@ a {
 }
 
 
-/* Cada herramienta */
+/* Cada licor */
 .card {
-    width: 200px;
+    width: 230px;
     height: 450px;
     background-color: #F2CF63;
     border: 1px solid #ddd;
