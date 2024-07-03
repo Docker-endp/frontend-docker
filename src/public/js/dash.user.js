@@ -33,8 +33,9 @@ const cerrarSesion = () => {
     window.location.href = '/login';
 }
 
+
 // VERIFICAR INGRESO
-const url = "https://backend-pf-p13h.onrender.com"
+const url = sessionStorage.getItem("urlApi");
 const token = sessionStorage.getItem("token");
 
 const urlComprobar = url + "/api/oauth";

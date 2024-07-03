@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/productos.vendedor.css" <title>Productos disponibles</title>
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="barra-principal">
+            <!-- logo pagina -->
+            <div class="logo"><img src="../img/dataflow-poppins-orange-.png" alt="" class="logo-bp"></div>
+            <!-- Titulo de la pagina -->
+            <div class="title">
+                Inventario de Bodega
+            </div>
+            <!-- Logo carrito de compras -->
+
+        </div>
+
+        <!-- Barra de botones -->
+        <div class="barra-dos">
+
+            <!-- Boton perfil -->
+            <div class="btn-perfil">
+                <a href="/dash/perfilv" class="btn-perfil">Mi Perfil</a>
+            </div>
+
+            <!-- Boton perfil -->
+            <div class="agotados">
+              <button class="btn-agotados" id="btn_agotados">
+                <span class="span-mother">
+                  <span>P</span>
+                  <span>r</span>
+                  <span>o</span>
+                  <span>d</span>
+                  <span>u</span>
+                  <span>c</span>
+                  <span>t</span>
+                  <span>o</span>
+                  <span>s</span>
+                  <span>_</span>
+                  <span>S</span>
+                  <span>t</span>
+                  <span>o</span>
+                  <span>c</span>
+                  <span>k</span>
+                </span>
+                <span class="span-mother2">
+                  <span>P</span>
+                  <span>r</span>
+                  <span>o</span>
+                  <span>d</span>
+                  <span>u</span>
+                  <span>c</span>
+                  <span>t</span>
+                  <span>o</span>
+                  <span>s</span>
+                  <span>_</span>
+                  <span>S</span>
+                  <span>t</span>
+                  <span>o</span>
+                  <span>c</span>
+                  <span>k</span>
+                </span>
+              </button>
+              
+          </div>
+
+            <!-- div barra de busqueda -->
+            <div class="sobresaliente">
+                <img src="../img/lupa.png" alt="log_buscar" class="lupa">
+                <!-- Barra de busqueda -->
+                <input id="datos-busqueda" type="text" placeholder="Nombre del producto">
+                <div id="result-busqueda"></div>
+
+            </div>
+        </div>
+
+        <!-- Productos -->
+        <div class="inventory-container"> <!-- contenedor del inventario -->
+
+            <ul class="inventory-list" id="data">
+            </ul>
+
+        </div><!-- Cierre del contenedor del inevnatrio -->
+
+
+        <!-- Modal de producto agotado -->
+         
+
+
+        <!-- Modal - Editar-->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Editar Producto</h2>
+                <form id="editForm">
+                    <div class="wave-group">
+                        <input required="" type="text" class="input" id="editNombre">
+                        <span class="bar"></span>
+                        <label class="label">
+                          <span class="label-char" style="--index: 0">N</span>
+                          <span class="label-char" style="--index: 1">o</span>
+                          <span class="label-char" style="--index: 2">m</span>
+                          <span class="label-char" style="--index: 3">b</span>
+                          <span class="label-char" style="--index: 3">r</span>
+                          <span class="label-char" style="--index: 3">e</span>
+                        </label>
+                      </div>
+                    <br>
+                    <div class="wave-group">
+                        <input required="" type="text" class="input" id="editDescripcion">
+                        <span class="bar"></span>
+                        <label class="label">
+                          <span class="label-char" style="--index: 0">D</span>
+                          <span class="label-char" style="--index: 1">e</span>
+                          <span class="label-char" style="--index: 2">s</span>
+                          <span class="label-char" style="--index: 3">c</span>
+                          <span class="label-char" style="--index: 3">r</span>
+                          <span class="label-char" style="--index: 3">i</span>
+                          <span class="label-char" style="--index: 3">p</span>
+                          <span class="label-char" style="--index: 3">c</span>
+                          <span class="label-char" style="--index: 3">i</span>
+                          <span class="label-char" style="--index: 3">ó</span>
+                          <span class="label-char" style="--index: 3">n</span>
+                        </label>
+                      </div>
+                    <br>
+                    <div class="wave-group">
+                        <input required="" type="text" class="input" id="editPrecio">
+                        <span class="bar"></span>
+                        <label class="label">
+                          <span class="label-char" style="--index: 0">P</span>
+                          <span class="label-char" style="--index: 1">r</span>
+                          <span class="label-char" style="--index: 2">e</span>
+                          <span class="label-char" style="--index: 3">c</span>
+                          <span class="label-char" style="--index: 3">i</span>
+                          <span class="label-char" style="--index: 3">o</span>
+                        </label>
+                      </div>
+                      <br>
+                    <div class="wave-group">
+                        <input required="" type="text" class="input" id="editcanti">
+                        <span class="bar"></span>
+                        <label class="label">
+                          <span class="label-char" style="--index: 0">C</span>
+                          <span class="label-char" style="--index: 1">a</span>
+                          <span class="label-char" style="--index: 2">n</span>
+                          <span class="label-char" style="--index: 3">t</span>
+                          <span class="label-char" style="--index: 3">_</span>
+                          <span class="label-char" style="--index: 3">I</span>
+                          <span class="label-char" style="--index: 3">n</span>
+                          <span class="label-char" style="--index: 3">i</span>
+                          <span class="label-char" style="--index: 3">c</span>
+                          <span class="label-char" style="--index: 3">i</span>
+                          <span class="label-char" style="--index: 3">a</span>
+                          <span class="label-char" style="--index: 3">l</span>
+                        </label>
+                      </div>
+                      <br>
+                    <div class="wave-group">
+                        <input required="" type="text" class="input" id="editcomprados">
+                        <span class="bar"></span>
+                        <label class="label">
+                          <span class="label-char" style="--index: 0">C</span>
+                          <span class="label-char" style="--index: 1">o</span>
+                          <span class="label-char" style="--index: 2">m</span>
+                          <span class="label-char" style="--index: 3">p</span>
+                          <span class="label-char" style="--index: 3">r</span>
+                          <span class="label-char" style="--index: 3">a</span>
+                          <span class="label-char" style="--index: 3">d</span>
+                          <span class="label-char" style="--index: 3">o</span>
+                          <span class="label-char" style="--index: 3">s</span>
+                        </label>
+                      </div>
+                      <br>
+                      <div class="wave-group">
+                        <input required="" type="text" class="input" id="editidproveedores">
+                        <span class="bar"></span>
+                        <label class="label">
+                          <span class="label-char" style="--index: 0">I</span>
+                          <span class="label-char" style="--index: 1">d</span>
+                          <span class="label-char" style="--index: 2">_</span>
+                          <span class="label-char" style="--index: 3">P</span>
+                          <span class="label-char" style="--index: 3">r</span>
+                          <span class="label-char" style="--index: 3">o</span>
+                          <span class="label-char" style="--index: 3">v</span>
+                          <span class="label-char" style="--index: 3">e</span>
+                          <span class="label-char" style="--index: 3">e</span>
+                          <span class="label-char" style="--index: 3">d</span>
+                          <span class="label-char" style="--index: 3">o</span>
+                          <span class="label-char" style="--index: 3">r</span>
+                          <span class="label-char" style="--index: 3">e</span>
+                          <span class="label-char" style="--index: 3">s</span>
+                        </label>
+                      </div>
+                    <br>
+                    <input type="hidden" id="editID" name="id">
+
+                    <!-- Bton enviar -->
+                     <center>
+                        <button class="btn-update" onclick="actualizarProducto();">
+                            <div class="svg-wrapper-1">
+                              <div class="svg-wrapper">
+                                <svg class="svg-update"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  width="24"
+                                  height="24"
+                                >
+                                  <path fill="none" d="M0 0h24v24H0z"></path>
+                                  <path
+                                    fill="currentColor"
+                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                            <span>Actualizar</span>
+                          </button>
+                          
+                    </center>
+                      
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- swal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- js -->
+    <script src="../js/productos.vendedor.js"></script>
+</body>
+
+</html>

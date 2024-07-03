@@ -1,0 +1,130 @@
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../img/fondoproductos.jpg);
+    /* overflow-y: hidden; */
+}
+
+
+/* Estilo para el título principal */
+h1 {
+    text-align: center;
+    /* Contorno de la letra */
+    color: #ffffff;
+    text-shadow: 
+        -2px -2px 0 #000,   
+        2px -2px 0 #000,    
+        -2px 2px 0 #000,    
+        2px 2px 0 #000,     
+        -2px 0 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        0 2px 0 #000;
+    font-size: 38px;
+}
+
+/* Estilo para el formulario */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #784f2ba6;
+    border-radius: 8px;
+    border: #ffffff solid 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para las etiquetas de los campos del formulario */
+label {
+    color: white;
+    display: block;
+    font-size: 23px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Estilo para los campos de entrada de texto, archivo, número y área de texto */
+input[type="text"],
+input[type="file"],
+input[type="number"],
+textarea {
+    width: 75%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilo para el botón de envío del formulario */
+
+/* f4b368 */
+button {
+    --primary-color: #bd6633;
+    --secondary-color: #ffffff;
+    --hover-color: #f4b368;
+    --arrow-width: 20px;
+    --arrow-stroke: 2px;
+    width: 260px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+  
+  button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  button:hover .arrow {
+    background: var(--secondary-color);
+  }
+  
+  button:hover .arrow:before {
+    right: 0;
+  }
+/* Estilo para la previsualización de la imagen */
+#imagePreview img {
+    max-width: 100%;
+    margin-top: 10px;
+}

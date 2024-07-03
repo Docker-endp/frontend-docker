@@ -1,6 +1,8 @@
 // URL
-const url = "http://localhost:3000"
-
+const url = document.getElementById('url').value;
+sessionStorage.setItem("urlApi", url)
+const url2 = sessionStorage.getItem("urlApi");
+console.log(url2)
 
 // datos
 const register = () => {
@@ -19,8 +21,8 @@ const register = () => {
         return;
     };
 
-    sessionStorage.setItem("urlApi", url);
-    const urlApi = sessionStorage.getItem("urlApi") + "/api/user";
+    const urlApi = url2 + "/api/user";
+    
     const options = {
         method: "POST",
         headers: {

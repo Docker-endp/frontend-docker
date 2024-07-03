@@ -1,28 +1,10 @@
-const btnTrash = document.querySelectorAll(".btn-trash");
-const btnDelete = document.querySelector(".delete");
-const noEliminar = document.getElementById("btn-not");
-const btnCerrar = document.getElementById("btn-close");
-
-// Añade un evento de clic a cada botón de 'Abrir Ventana'
-btnTrash.forEach(function (button) {
-    button.addEventListener("click", function () {
-        btnDelete.style.display = 'block';
-    });
-});
-
-btnCerrar.addEventListener("click", function () {
-    btnDelete.style.display = 'none';
-});
-
-noEliminar.addEventListener("click", function () {
-    btnDelete.style.display = 'none';
-});
 
 // tabla
-let url = "http://localhost:3000/api/user";
+let url = sessionStorage.getItem("urlApi");
+const urlApi = url + "/api/user"
 
 // MOSTRAR
-fetch(url)
+fetch(urlApi)
     .then(res => res.json())
     .then(data => {
         if (data.error) {
@@ -46,7 +28,11 @@ const mostrar = (data) => {
                 <td>${data[i].NOMBRE}</td>
                 <td>${data[i].CORREO}</td>
                 <td>${data[i].CELULAR}</td>
-                <td> <button class="btn-trash" onclick="eliminar(event);"> ELIMINAR </button> </td>
+                <td>  
+                <button class="button" onclick="eliminar(event);">
+                ELIMINAR
+                </button>
+                </td>
             </tr>                        
     `;
     }
@@ -60,8 +46,8 @@ const eliminar = (event) => {
     console.log(eliminar_id);
   
     Swal.fire({
-      title: "Estas seguro?",
-      text: "¡No podrás revertirlo!",
+      title: "¿Estas seguro que quieres eliminar este usuario?",
+      text: "¡No podrás revertir la accion!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -94,7 +80,7 @@ const eliminar = (event) => {
       }),
     };
   
-    fetch(url, options)
+    fetch(urlApi, options)
       .then(res => res.json())
       .then(data => {
         if (data.error == false) {
@@ -106,3 +92,49 @@ const eliminar = (event) => {
         console.log("Tenemos un problema", err);
       });
   };
+
+// BARRA BUSQUEDA
+const buscarCliente = (query, data) => {
+  // Filtra los datos de los clientes para encontrar coincidencias con el ID o Nombre
+  let resultados = data.filter(cliente => 
+      cliente.ID.toString().includes(query) || 
+      cliente.NOMBRE.toLowerCase().includes(query.toLowerCase())
+  );
+  return resultados;
+};
+
+// Selecciona el campo de entrada de la barra de búsqueda
+const inputBusqueda = document.getElementById('datos-busqueda');
+
+// Añade un evento para escuchar cuando se presiona una tecla en la barra de búsqueda
+inputBusqueda.addEventListener('keydown', function(event) {
+  // Verifica si la tecla presionada es 'Enter'
+  if (event.key === 'Enter') {
+      // Obtiene el valor de búsqueda
+      let query = inputBusqueda.value;
+      // Hace una solicitud a la API para obtener los datos de los clientes
+      fetch(url)
+          .then(res => res.json())
+          .then(data => {
+              if (data.error) {
+                  console.error("Error al mostrar datos", data);
+              } else {
+                  // Busca clientes que coincidan con la consulta
+                  let resultados = buscarCliente(query, data.respuesta[0]);
+                  // Verifica si se encontraron resultados
+                  if (resultados.length > 0) {
+                      // Muestra los resultados en la tabla
+                      mostrar(resultados);
+                  } else {
+                      // Muestra una alerta si no se encontraron resultados
+                      Swal.fire({
+                          title: "NO HAY RESULTADOS DE BUSQUEDA",
+                          text: "El ID o Nombre que busca no se encuentra en la base de datos",
+                          icon: "warning",
+                      });
+                  }
+              }
+          })
+          .catch(error => console.log(error));
+  }
+});

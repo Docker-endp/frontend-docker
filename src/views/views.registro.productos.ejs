@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Productos</title>
+    <link rel="stylesheet" href="../css/registro.producto.css">
+</head>
+<body>
+    <!-- Título principal de la página -->
+    <h1>Registro de Productos</h1>
+
+    <!-- Formulario para registrar productos -->
+    <form id="productForm" action="javascript:void(0);" method="POST" enctype="multipart/form-data">
+        
+        <!-- Campo para ingresar el nombre del producto -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="name" name="nombre" class="input" required>
+
+        <!-- Campo para cargar la imagen del producto -->
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="img" name="imagen" accept="image/*" class="input" required>
+        
+        <!-- Div para previsualizar la imagen cargada -->
+        <!-- <div id="imagePreview"></div> -->
+
+        <!-- Campo para ingresar la descripción del producto -->
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="description" rows="4" class="input" required></textarea>
+
+        <!-- Campo para ingresar el precio del producto -->
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" step="0.01" class="input" required>
+
+        <!-- Campo para ingresar la cantidad inicial del producto -->
+        <label for="cant_inicial">Cantidad Inicial:</label>
+        <input type="number" id="cant_inicial" name="canti" class="input" required>
+
+        <!-- Campo para ingresar el stock del producto -->
+        <label for="comprados">Comprados:</label>
+        <input type="number" id="comprados" name="comprados" class="input" required>
+
+        <!-- Campo para ingresar el stock del producto -->
+        <label for="id_proveedores">Id_Proveedores:</label>
+        <input type="number" id="id_proveedores" name="id_proveedores" class="input" required>
+
+        <!-- Botón para enviar el formulario -->
+        <button type="button" onclick="registerP();">
+            Registrar Producto
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </button>
+    </form>
+    <!-- swal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="../js/registro.productos.js"></script>
+</body>
+</html>

@@ -1,0 +1,662 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(/img/burbujas.jpg);
+    overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* Encabezado */
+.barra-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 17%;
+    background-color: #232930a4;
+    border-bottom: #F2CF63 solid 2px;
+    display: grid;
+    grid-template-columns: 2fr 5fr 1.5fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+/* Logo principal */
+.logo img {
+    width: 290px;
+    height: 60px;
+}
+
+/* Titulo de la pagina */
+.title {
+    color: #F2CF63;
+    font-weight: bold;
+    margin-left: 25px;
+    font-size: 37px;
+    display: flex;
+    align-items: center;
+}
+
+/* Divs que contienen imagenes */
+.logo,
+.logo-carrito,
+.logo-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+/* Logo de: carrito de compras y foto del usuario */
+.carrito-bp,
+.user-bp {
+    cursor: pointer;
+    width: 55px;
+}
+
+.barra-dos {
+    margin-top: 85px;
+    width: 100%;
+    height: 15%;
+    background-color: #f2ce632c;
+    border-bottom: #F2CF63 solid 2px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+/* DIV del Boton 'mi perfil' */
+.btn-bd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* quitar estilos predeterminadols del Boton 'mi perfil' */
+a {
+    text-decoration: none;
+}
+
+/* Boton 'mi perfil' */
+.btn-bd a,
+.btn-perfil a {
+    color: white;
+    border: solid white 3px;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/* Boton 'mi perfil' al pasar el cursor */
+.btn-bd a:hover,
+.btn-perfil a:hover {
+    transition: 400ms;
+    background-color: #f2ce6385;
+    border: solid #F2CF63 4px;
+    font-size: 30px;
+}
+.agotados{
+    display: flex;
+    align-items: center;
+}
+/* btn- AGOTADOS */
+.btn-agotados {
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-agotados .span-mother {
+    display: flex;
+    overflow: hidden;
+}
+
+.btn-agotados:hover .span-mother {
+    position: absolute;
+}
+
+.btn-agotados:hover .span-mother span {
+    transform: translateY(1.2em);
+}
+
+.btn-agotados .span-mother span:nth-child(1) {
+    transition: 0.2s;
+}
+
+.btn-agotados .span-mother span:nth-child(2) {
+    transition: 0.3s;
+}
+
+.btn-agotados .span-mother span:nth-child(3) {
+    transition: 0.4s;
+}
+
+.btn-agotados .span-mother span:nth-child(4) {
+    transition: 0.5s;
+}
+
+.btn-agotados .span-mother span:nth-child(5) {
+    transition: 0.6s;
+}
+
+.btn-agotados .span-mother span:nth-child(6) {
+    transition: 0.7s;
+}
+
+.btn-agotados .span-mother2 {
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+}
+
+.btn-agotados .span-mother2 span {
+    transform: translateY(-1.2em);
+}
+
+.btn-agotados:hover .span-mother2 span {
+    transform: translateY(0);
+}
+
+.btn-agotados .span-mother2 span {
+    transition: 0.2s;
+}
+
+.btn-agotados .span-mother2 span:nth-child(2) {
+    transition: 0.3s;
+}
+
+.btn-agotados .span-mother2 span:nth-child(3) {
+    transition: 0.4s;
+}
+
+.btn-agotados .span-mother2 span:nth-child(4) {
+    transition: 0.5s;
+}
+
+.btn-agotados .span-mother2 span:nth-child(5) {
+    transition: 0.6s;
+}
+
+.btn-agotados .span-mother2 span:nth-child(6) {
+    transition: 0.7s;
+}
+
+/* Div que sobresale */
+.sobresaliente {
+    margin-top: 5px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* barra de busqueda */
+.sobresaliente input[type="text"] {
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.418);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Estilos CSS para el placeholder */
+::placeholder {
+    color: rgba(0, 0, 0, 0.76);
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* logo buscar */
+.lupa {
+    width: 30px;
+    margin-right: 15px;
+}
+
+/* BOTON DE ELIMINAR */
+.bin-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: rgb(255, 95, 95);
+    cursor: pointer;
+    border: 2px solid rgb(255, 201, 201);
+    transition-duration: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.bin-bottom {
+    width: 13px;
+    z-index: 2;
+}
+
+.bin-top {
+    width: 14px;
+    transform-origin: right;
+    transition-duration: 0.3s;
+    z-index: 2;
+}
+
+.bin-button:hover .bin-top {
+    transform: rotate(45deg);
+}
+
+.bin-button:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.bin-button:active {
+    transform: scale(0.9);
+}
+
+.garbage {
+    position: absolute;
+    width: 13px;
+    height: auto;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.bin-button:hover .garbage {
+    animation: throw 0.4s linear;
+}
+
+@keyframes throw {
+    from {
+        transform: translate(-400%, -700%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+}
+
+
+/* BOTON DE EDITAR */
+.editBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(65, 128, 180);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.editBtn::before {
+    content: "";
+    width: 200%;
+    height: 200%;
+    background-color: rgb(10, 70, 148);
+    position: absolute;
+    z-index: 1;
+    transform: scale(0);
+    transition: all 0.3s;
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+.editBtn:hover::before {
+    transform: scale(1);
+}
+
+.editBtn:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.336);
+}
+
+.editBtn svg {
+    height: 17px;
+    fill: white;
+    z-index: 3;
+    transition: all 0.2s;
+    transform-origin: bottom;
+}
+
+.editBtn:hover svg {
+    transform: rotate(-15deg) translateX(5px);
+}
+
+.editBtn::after {
+    content: "";
+    width: 25px;
+    height: 1.5px;
+    position: absolute;
+    bottom: 19px;
+    left: -5px;
+    background-color: white;
+    border-radius: 2px;
+    z-index: 2;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-out;
+}
+
+.editBtn:hover::after {
+    transform: scaleX(1);
+    left: 0px;
+    transform-origin: right;
+}
+
+/* BOTON DE AÑADIR */
+.cssbuttons-io-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .1em;
+    padding: 8px;
+    color: white;
+    background: linear-gradient(0deg, rgb(209, 109, 27), rgb(255, 160, 71));
+    border: none;
+    outline: none;
+    box-shadow: 0 .5em .5em -.4em rgb(0, 0, 0, .5);
+    border-radius: 20em;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.cssbuttons-io-button:hover {
+    filter: brightness(1.2);
+    color: rgb(0, 0, 0, .5);
+}
+
+.cssbuttons-io-button:active {
+    transition: 0s;
+    transform: rotate(-10deg);
+}
+
+
+/* PRODUCTOS */
+/* CONTENEDOR DEL INVENTARIO LAS HERRAMIENTAS */
+.inventory-container {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+}
+
+/* la lista de las herramientas */
+.inventory-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: start;
+}
+
+
+/* Cada herramienta */
+.card {
+    width: 200px;
+    height: 450px;
+    background-color: #F2CF63;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px;
+}
+
+/* Contenedor de la imagen de la herramienta */
+.cont-img {
+    width: 100%;
+    height: 170px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.cont-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Contenedor del texto y boton */
+.card-body {
+    padding: 15px;
+}
+
+/* titulo de el producto */
+.card-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Botones de las imagenes */
+.btn img {
+    width: 35px;
+}
+
+/* Descripcion del producto */
+.card-text {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* Contenido de la carta */
+.cont-btn {
+    width: 100%;
+    display: flex;
+}
+
+/* DISEÑO DEL MODAL */
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.719);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    font-weight: bold;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 40%;
+    height: 85%;
+}
+
+h2 {
+    text-align: center;
+    color: #ec6b2f;
+}
+
+label {
+    font-size: 23px;
+}
+
+/* INPUTS */
+.wave-group {
+    position: relative;
+}
+
+.wave-group .input {
+    font-size: 20px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 370px;
+    border: none;
+    border-bottom: 1px solid #db2b2b60;
+    background: transparent;
+}
+
+.wave-group .input:focus {
+    outline: none;
+}
+
+.wave-group .label {
+    color: #999;
+    font-size: 23px;
+    margin-bottom: 15px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    display: flex;
+}
+
+.wave-group .label-char {
+    font-size: 20px;
+    transition: 0.2s ease all;
+    transition-delay: calc(var(--index) * .05s);
+}
+
+.wave-group .input:focus~label .label-char,
+.wave-group .input:valid~label .label-char {
+    transform: translateY(-30px);
+    font-weight: bold;
+    font-size: 20px;
+    color: #ec6b2f;
+}
+
+.wave-group .bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+
+.wave-group .bar:before,
+.wave-group .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #ec6b2f;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+    left: 50%;
+}
+
+.wave-group .bar:after {
+    right: 50%;
+}
+
+.wave-group .input:focus~.bar:before,
+.wave-group .input:focus~.bar:after {
+    width: 50%;
+}
+
+/* Cerra del modal 'icono */
+.close {
+    color: #ec6b2f;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #F2CF63;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Boton */
+.btn-update {
+    font-family: inherit;
+    font-size: 20px;
+    background: #ec6b2f;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-update span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-update svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-update:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.btn-update:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.btn-update:hover span {
+    transform: translateX(5em);
+}
+
+.btn-update:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}

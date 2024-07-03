@@ -8,12 +8,20 @@ export const home = (req, res) =>{
 
 // Register
 export const register = (req, res) =>{
-    res.render("views.register.ejs");
+    const url = process.env.BACKEND_URL;
+    const options = {
+        url : url
+    }
+    res.render("views.register.ejs", options);
 };
 
 // login
 export const login = (req, res) =>{
-    res.render("views.login.ejs");
+    const url = process.env.BACKEND_URL;
+    const options = {
+        url : url
+    }
+    res.render("views.login.ejs", options);
 };
 
 // Olvide contraseña PASO 1

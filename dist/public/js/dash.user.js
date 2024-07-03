@@ -25,28 +25,65 @@ window.onload = function() {
     // Muestra la ventana de servicio al cliente
     main.style.display = 'block';
   }
+
+  // CERRAS SESION
+const cerrarSesion = () => {
+    sessionStorage.setItem("token", "");
+    sessionStorage.setItem("urlApi", "");
+    window.location.href = '/login';
+}
+
+
+// VERIFICAR INGRESO
+const url = sessionStorage.getItem("urlApi");
+const token = sessionStorage.getItem("token");
+
+const urlComprobar = url + "/api/oauth";
+
+if (token == "" || token == null) {
+  window.location.href = "/login"
+};
+if (url == "" || url == null) {
+  window.location.href = "/login"
+};
+
+const options = {
+  method: "POST",
+  headers: {
+    'Content-Type': 'application/json',
+     'Authorization' : `Bearer ${token}`
+  }
+}
+fetch(urlComprobar, options)
+  .then(res => res.json())
+  .then(data => {
+    if (data.error == true) {
+      window.location.href = "/login"
+    }
+  });
   
   
   
-    
-    
+
+
+
+
   
-  
-  const searchInput = document.getElementById('datos-busqueda');
-  const searchResults = document.getElementById('result-busqueda');
+//   const searchInput = document.getElementById('datos-busqueda');
+//   const searchResults = document.getElementById('result-busqueda');
   
   // Detectar cuando se presiona la tecla "Enter" en el campo de texto
   // Agregar un event listener al campo de búsqueda para detectar cuando se escribe
-  searchInput.addEventListener('keypress', function(event) {
-      if (event.key === 'Enter') {
-          const query = searchInput.value.trim(); // Obtener el texto de búsqueda sin espacios al inicio y al final
-          if (query !== '') {
-              searchResults.innerHTML = `Buscando resultados para: <strong>${query}</strong>`;
+//   searchInput.addEventListener('keypress', function(event) {
+//       if (event.key === 'Enter') {
+//           const query = searchInput.value.trim(); // Obtener el texto de búsqueda sin espacios al inicio y al final
+//           if (query !== '') {
+//               searchResults.innerHTML = `Buscando resultados para: <strong>${query}</strong>`;
               
-          } else {
-              let mensaje = 'Por favor ingresa un término de búsqueda.';
-              searchResults.innerHTML = alert(mensaje);
-          }
-      }
-  });
+//           } else {
+//               let mensaje = 'Por favor ingresa un término de búsqueda.';
+//               searchResults.innerHTML = alert(mensaje);
+//           }
+//       }
+//   });
   

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="../css/editarperfilU.css">
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+
+        <!-- Barra Principal -->
+        <div class="barra-principal">
+            <div class="img-user"><img src="../img/user.png" alt=""></div>
+            <div class="nom-user" id="nomUser">nom user</div>
+            <div class="logo-bus"><img src="../img/lupa.png" alt="" class="lupa"></div>
+            <div class="barra-busqueda">
+                <input id="datos-busqueda" type="text" placeholder="Buscar...">
+                <div id="result-busqueda"></div>
+            </div>
+        </div>
+
+        <!-- Barra del Medio -->
+        <div class="barra-half">
+
+            <!-- Menu -->
+            <div class="barra-menu" id="menu">
+                <a href="/dash/perfilu" class="elemento1" >Volver</a>
+                <a href="#" class="elemento" onclick="mostrarSegundaVentana()"><center>Actualizar Datos</center></a>
+            </div>
+
+            <!-- Ventana de EDITAR PERFIL -->
+            <div class="main" id="main">
+
+
+                <!-- segunda ventana 'ACTUALIZAR DATOS' -->
+                <div class="second-ventana" id="segundaVentana" >
+                    <!-- Encabezado -->
+                    <div class="barra" id="barra">
+                        <!-- foto del perfil -->
+                        <div class="user">
+                            <img src="../img/user.png" alt="" class="img-ventana">
+                        </div>
+                        <!-- Nom usuario -->
+                        <div class="nom-ventana" id="nomUser">nom user</div>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="content-one">
+                        Nombre
+                        <input type="text" name="name" id="name" placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="content-one">
+                        Apellido
+                        <input type="text" name="username" id="lastname" placeholder="Ingrese su apellido">
+                    </div>
+                    <div class="content-one">
+                        Documento de Identidad
+                        <input type="text" name="document" id="doc" placeholder="Ingrese su documento de identidad">
+                    </div>
+                    <div class="content-one">
+                        Contraseña
+                        <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
+                    </div>
+                    <div class="content-one">
+                        Celular
+                        <input type="text" name="document" id="cel" placeholder="Ingrese su documento de celular">
+                    </div>
+                    <div class="content-one">
+                        Ingrese su correo para realizar 
+                        <br>
+                        el cambio de sus datos:
+                        <input type="email" name="email" id="email" placeholder="Ingrese el correo">
+                    </div>
+                    <button class="btn-change" onclick="modificar();"> CAMBIAR </button>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/editarperfilU.js"></script>
+</body>
+
+</html>

@@ -1,10 +1,11 @@
-// URL
-const url = "https://backend-pf-p13h.onrender.com"
+
+// const url = "https://backend-pf-p13h.onrender.com"
 
 // datos
 const login = () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    const url = document.getElementById('url').value;
 
     // Verificar que lo campos no esten vacios
     if (!email || !password) {
@@ -43,6 +44,7 @@ const login = () => {
             }else{
                 sessionStorage.setItem("token", data.body[0]);
                 setTimeout(function() {
+                    
                     if(data.body[1] == "vendedorlicoreria@gmail.com"){
                         window.location.href = '/dash/perfilv';
                     } else {
