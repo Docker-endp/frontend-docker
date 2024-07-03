@@ -113,7 +113,7 @@ inputBusqueda.addEventListener('keydown', function(event) {
       // Obtiene el valor de búsqueda
       let query = inputBusqueda.value;
       // Hace una solicitud a la API para obtener los datos de los clientes
-      fetch(url)
+      fetch(urlApi)
           .then(res => res.json())
           .then(data => {
               if (data.error) {
