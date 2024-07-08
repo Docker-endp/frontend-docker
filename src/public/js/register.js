@@ -21,14 +21,14 @@ const register = () => {
         return;
     };
 
-    // Validar que nombre y apellido solo contengan letras
+    // Validar que nombre y apellido solo contengan letras y no caracteres especiales
     const namePattern = /^[A-Za-z]+$/;
     if (!namePattern.test(name)) {
-        Swal.fire("El nombre NO cumple con los requisitos para ser valido!!");
+        Swal.fire("El nombre solo puede contener letras y no caracteres especiales!");
         return;
     }
     if (!namePattern.test(lastname)) {
-        Swal.fire("El apellido NO cumple con los requisitos para ser valido!!");
+        Swal.fire("El apellido solo puede contener letras y no caracteres especiales!");
         return;
     }
 
@@ -49,7 +49,7 @@ const register = () => {
    // Validar que el celular solo contenga exactamente 10 números
    const celPattern = /^\d{10}$/;
    if (!celPattern.test(cel)) {
-       Swal.fire("El número de celular NO cumple con los requisitos para ser valido!!");
+       Swal.fire("El número de documento NO cumple con los requisitos para ser valido!!");
        return;
    }
 

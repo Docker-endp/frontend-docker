@@ -37,7 +37,7 @@ const mostrar = (data) => {
                               &nbsp
                               &nbsp
                                 <!-- WHATSAPP -->
-                                <button class="button2">
+                                <button class="button2" onclick="redirectToWhatsApp('${data[i].NOMBRE}');">
                                    WhatsApp
                                       <svg viewBox="0 0 48 48" y="0px" x="0px" 
                                           xmlns="http://www.w3.org/2000/svg">
@@ -45,6 +45,16 @@ const mostrar = (data) => {
                                            </svg>
                                 </button> 
                             </div>
+
+                            <div class="content-btn">
+                              &nbsp
+                              &nbsp
+                                <!-- WHATSAPP -->
+                                <button onclick="agregarProducto('${data[i].ID}');">
+                                   Agregar
+                                </button> 
+                            </div>
+
                         </div>
                     </div>
                 </li>                     
@@ -52,7 +62,22 @@ const mostrar = (data) => {
     }
 
     document.getElementById("data").innerHTML = body;
+
 };
+
+// Función para redirigir a WhatsApp con el nombre del producto
+function redirectToWhatsApp(nombreProducto) {
+    const numeroTelefono = '573234377424'; // Reemplaza con tu número de WhatsApp
+    const mensaje = `¡Hola! :).
+Estoy super interesad@ en comprar el producto "${nombreProducto}" <3.
+Me darías mas información por favor.`;
+
+    const mensajeCodificado = encodeURIComponent(mensaje);
+    const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
+
+    window.location.href = urlWhatsApp;
+}
+
 
 // BARRA DE BUSQUEDA
 // Función para buscar productos
@@ -102,3 +127,22 @@ fetch(urlApi)
     .catch(error => console.log(error));
 
 
+// AGREGAR A LA LISTA DE DESEOS
+function agregarProducto(productId) {
+    fetch(urlApi)
+        .then(res => res.json())
+        .then(data => {
+            const productos = data.respuesta[0][0];
+            const producto = productos.find(prod => prod.ID == productId);
+
+            if (producto) {
+                let productosDeseos = JSON.parse(localStorage.getItem('productosDeseos')) || [];
+                productosDeseos.push(producto);
+                localStorage.setItem('productosDeseos', JSON.stringify(productosDeseos));
+                alert("Producto agregado a la lista de deseos.");
+            } else {
+                alert("Error al agregar producto.");
+            }
+        })
+        .catch(error => console.log(error));
+}

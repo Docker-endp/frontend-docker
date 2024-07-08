@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { 
-    agotados, listarP, listarUsuarios, modificarPU, 
+    agotados, ldeseos, listarP, listarUsuarios, modificarPU, 
     perfilUsuario, perfilVendedor, productUser, 
     regProduct, regproveedores 
 } from "../controllers/controller.dash.js";
@@ -12,6 +12,9 @@ const rutaDash = Router();
 rutaDash.get("/perfilu", perfilUsuario )
 rutaDash.get("/editarpu", modificarPU )
 rutaDash.get("/productu", productUser )
+rutaDash.get("/ldesos", ldeseos )
+
+
 // VENDEDOR
 rutaDash.get("/perfilv", perfilVendedor )
 rutaDash.get("/clientes", listarUsuarios )
