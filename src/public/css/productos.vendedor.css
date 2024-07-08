@@ -5,6 +5,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    /* background-color: black; */
     background-image: url(/img/burbujas.jpg);
     overflow-x: hidden;
 }
@@ -18,14 +19,9 @@ body {
 
 /* Encabezado */
 .barra-principal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
     width: 100%;
-    height: 17%;
-    background-color: #232930a4;
-    border-bottom: #F2CF63 solid 2px;
+    height: 15%;
+    border-bottom: #be9947 solid 2px;
     display: grid;
     grid-template-columns: 2fr 5fr 1.5fr 1fr;
     grid-template-rows: 1fr;
@@ -39,7 +35,7 @@ body {
 
 /* Titulo de la pagina */
 .title {
-    color: #F2CF63;
+    color: #be9947;
     font-weight: bold;
     margin-left: 25px;
     font-size: 37px;
@@ -65,11 +61,10 @@ body {
 }
 
 .barra-dos {
-    margin-top: 85px;
     width: 100%;
     height: 15%;
     background-color: #f2ce632c;
-    border-bottom: #F2CF63 solid 2px;
+    border-bottom: #be9947 solid 2px;
     display: grid;
     grid-template-columns: 2fr 2fr 3fr 1fr;
     grid-template-rows: 1fr;
@@ -108,14 +103,15 @@ a {
 .btn-bd a:hover,
 .btn-perfil a:hover {
     transition: 400ms;
-    background-color: #f2ce6385;
-    border: solid #F2CF63 4px;
+    background-color: rgba(242, 206, 99, 0.466);
+    border: solid #be9947 4px;
     font-size: 30px;
 }
 .agotados{
     display: flex;
     align-items: center;
 }
+
 /* btn- AGOTADOS */
 .btn-agotados {
     font-weight: bold;
@@ -170,6 +166,7 @@ a {
 .btn-agotados .span-mother span:nth-child(6) {
     transition: 0.7s;
 }
+
 
 .btn-agotados .span-mother2 {
     display: flex;
@@ -419,6 +416,7 @@ a {
 
 /* la lista de las herramientas */
 .inventory-list {
+    margin-left: 10px;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
@@ -430,8 +428,8 @@ a {
 /* Cada licor */
 .card {
     width: 230px;
-    height: 450px;
-    background-color: #F2CF63;
+    height: 487px;
+    background-color: #be9947;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -442,12 +440,15 @@ a {
 /* Contenedor de la imagen de la herramienta */
 .cont-img {
     width: 100%;
-    height: 170px;
-    border-bottom: 1px solid rgb(216, 216, 216);
+    height: 180px;
+    border-bottom: 2px solid rgb(216, 216, 216);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cont-img img {
-    width: 100%;
+    width: 90%;
     height: 100%;
 }
 
@@ -462,14 +463,9 @@ a {
     margin-bottom: 5px;
 }
 
-/* Botones de las imagenes */
-.btn img {
-    width: 35px;
-}
-
 /* Descripcion del producto */
 .card-text {
-    font-size: 15px;
+    font-size: 17px;
     margin-bottom: 10px;
 }
 

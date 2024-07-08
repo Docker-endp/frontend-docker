@@ -18,7 +18,14 @@ const login = () => {
         return;
     }
 
+    // Validar que el correo contenga '@'
+    if (!email.includes('@')) {
+        Swal.fire("El correo NO cumple con los requisitos para ser valido!!");
+        return;
+    }
+
     sessionStorage.setItem("urlApi", url);
+    sessionStorage.setItem("email", email);
     const urlApi = sessionStorage.getItem("urlApi") + "/api/login";
     const options = {
         method: "POST",
@@ -35,6 +42,7 @@ const login = () => {
         .then(res => res.json())
         .then(data => {
             if(data.error==true){
+                
                 Swal.fire({
                     icon: "error",
                     title: "Tienes un campo incorrecto",
@@ -42,7 +50,8 @@ const login = () => {
                     timer: 1500
                 });
             }else{
-                sessionStorage.setItem("token", data.body[0]);
+                console.log(data);
+                sessionStorage.setItem("token", data.body);
                 setTimeout(function() {
                     
                     if(data.body[1] == "vendedorlicoreria@gmail.com"){
@@ -61,4 +70,9 @@ const login = () => {
         });
             
     
+}
+
+// BTN-REGRESAR
+function backlogin() {
+    window.location.href = '/';
 }

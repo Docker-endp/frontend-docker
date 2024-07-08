@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/registrar.proveedores.css">
+    <title>Registrar Proveedores</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/submit" method="post">
+            <h2>Registrar Proveedor</h2>
+            <div>
+                <label for="empresa">Empresa:</label>
+                <input type="text" id="empresa" name="empresa" required>
+            </div>
+            <div>
+                <label for="telefono">Teléfono:</label>
+                <input type="number" id="telefono" name="telefono" required>
+            </div>
+            <div>
+                <label for="sitio_web">Sitio Web:</label>
+                <input type="url" id="sitio_web" name="sitio_web" required>
+            </div>
+            <br>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+
+</html>

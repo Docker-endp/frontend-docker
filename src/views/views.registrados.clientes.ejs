@@ -35,6 +35,9 @@
             <div class="btn-perfil">
                 <a href="/dash/perfilv" class="elemento">Mi Perfil</a>
             </div>
+            <div class="reporte">
+                <button class="btn-reporte" onclick="generarPDF();">Reporte Clientes</button>
+            </div>
         </div>
 
         <!-- clientes -->
@@ -66,31 +69,14 @@
             
             <!-- Contenedor de la ventana eliminar -->
         
-            <!-- Ventana 'eliminar' -->
-            <div class="delete">
-                <!-- Encabezado -->
-                <div class="head">
-                    <div class="btn-close" id="btn-close">
-                        &times;
-                    </div>
-                </div>
-                <!-- Cuerpo -->
-                <div class="body">
-                    <h3 class="text-delete">
-                        ¿Desea eliminar el cliente definitivamente?
-                    </h3>
-                </div>
-                <div class="footer">
-                    <button class="btn-confirm yes" id="btn-yes">SI</button>
-                    <button class="btn-confirm no" id="btn-not">NO</button>
-                </div>
-
-            </div>
+           
          </div>
          
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/regidtrados.clientes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 </body>
 </html>

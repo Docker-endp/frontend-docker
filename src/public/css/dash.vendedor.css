@@ -1,149 +1,134 @@
 * {
-    padding: 0px;
-    margin: 0px;
-  }
-  
-  body {
-    background-image: url(../img/licor.jpg);
-    background: cover;
-    background-position: center;/* Centra la imagen */
-    background-attachment: fixed;
-    font-family: 'Poppins', sans-serif;
-    overflow-X: hidden;
-    padding: 0px;
-    margin: 0px;
-  
-  }
-  
-  /* Contenedor principal */
-  .container {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 4fr 4fr;
-  }
-  
-  /* tamaño */
-  .barra-principal,
-  .menu1,
-  .menu2 {
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Encabezado */
-  .barra-principal {
-    grid-column: 1;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 4fr 2fr;
-    grid-template-rows: 1fr;
-    border-bottom: solid #7a96cc 2px;
-  }
-  
-  /* Icono buscar */
-  .lupa {
-    width: 25px;
-  }
-  
-  /*  Barra de busqueda */
-  .barra-busqueda input[type="text"] {
-    flex: 2;
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-    outline: none;
-  
-  }
-  
-  /* Div de la imagen del usuario, div del logo de busqueda y div de la barra de busqueda  */
-  .img-user,
-  .barra-busqueda,
-  .logo-bus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 7px;
-  }
-  
-  /* Div de la barra de busqueda */
-  .logo-bus {
-    display: flex;
-    justify-content: end;
-  }
-  
-  /* Nombre del usuario */
-  .nom-user {
-    color: rgb(255, 255, 255);
-    font-size: 26px;
-    display: flex;
-    align-items: center;
-  }
-  
-  /* MENU */
-  
-  /* link de los items del menu */
-  a {
-    text-decoration: none;
-  }
-  
-  /* primera parte del menu */
-  .menu1 {
-    grid-row: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-  }
-  
-  .box {
-    margin-right: 5px;
-  }
-  
-  /* Imagenes de las cards */
-  .img-m1 {
-    width: 70px;
-  }
-  
-  /* card N°1 */
-  .card-blue {
-    width: 200px;
-    background-color: #7a95ccb9;
-    border: rgb(255, 255, 255) solid 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Cerd N°2 */
-  .card-white {
-    width: 200px;
-    background-color: #ffffffa9;
-    border: #7a96cc solid 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* card N°1 al pasar el cursor */
-  .card-blue:hover {
-    transition: 600ms;
-    background-color: #ffffffb9;
-    border: #7a96cc solid 1px;
-  }
-  
-  /* Cerd N°2 al pasar el cursor*/
-  .card-white:hover {
-    transition: 600ms;
-    background-color: #7a95ccb9;
-    border: #ffffff solid 2px;
-  }
-  /* Segunda parte del menu */
-  .menu2 {
-    grid-row: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-  }
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-image: url(../img/fon-vendedor.jpg);
+  background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* No repite la imagen */
+  font-family: 'Poppins', sans-serif;
+  overflow-X: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Contenedor principal */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.5fr 4fr 4fr;
+}
+
+/* tamaño */
+.barra-principal,
+.menu1,
+.menu2 {
+  width: 100%;
+  height: 100%;
+}
+
+/* Encabezado */
+.barra-principal {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 4fr 2fr;
+  grid-template-rows: 1fr;
+  border-bottom: solid #c26522 2px;
+}
+
+/* Icono buscar */
+.lupa {
+  width: 25px;
+}
+
+/*  Barra de busqueda */
+.barra-busqueda input[type="text"] {
+  flex: 2;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
+
+}
+
+/* Div de la imagen del usuario, div del logo de busqueda y div de la barra de busqueda  */
+.img-user,
+.barra-busqueda,
+.logo-bus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7px;
+}
+
+/* Div de la barra de busqueda */
+.logo-bus {
+  display: flex;
+  justify-content: end;
+}
+
+/* Nombre del usuario */
+.nom-user {
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+}
+
+/* MENU */
+
+/* link de los items del menu */
+a {
+  text-decoration: none;
+}
+
+/* primera parte del menu */
+.menu1 {
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.box {
+  margin-right: 5px;
+}
+
+/* Imagenes de las cards */
+.img-m1 {
+  width: 70px;
+}
+
+
+
+/* Cerd N°1 y 2 */
+.card-white, .card-blue {
+  width: 200px;
+  background-color: #ffffffda;
+  border: #be9947 solid 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* card N°1 al pasar el cursor */
+.card-blue:hover, .card-white:hover {
+  transition: 600ms;
+  background-color: #be9947;
+  border: #ffffff solid 3px;
+}
+
+/* Segunda parte del menu */
+.menu2 {
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

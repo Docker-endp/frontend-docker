@@ -1,6 +1,7 @@
 // tabla
 let url = sessionStorage.getItem("urlApi");
 const urlApi = url + "/api/pagotados"
+console.log(urlApi);
 
 // MOSTRAR
 fetch(urlApi)
@@ -9,13 +10,13 @@ fetch(urlApi)
         if (data.error) {
             console.error("error al mostrar datos", data);
         } else {
-            mostrar(data.respuesta[0][0]);
+            mostrar(data.respuesta);
         }
     })
     .catch(error => console.log(error));
 
 const mostrar = (data) => {
-    console.log(data[0]);
+    console.log(data[0][0]);
 
     let body = "";
 
@@ -25,11 +26,12 @@ const mostrar = (data) => {
             <li>
                     <div class="card">
                         <div class="cont-img">
-                            <img src="../img/licorF1N1.png" alt="Producto">
+                            <img src="${data[i].IMAGEN}" alt="Producto">
                         </div>
                         <div class="card-body">
+                            <p class="card-text"><b>Id: </b>${data[i].ID}</p>
                             <h5 class="card-title">${data[i].NOMBRE}</h5>
-                            <p class="card-text">${data[i].ID}</p>
+                            <p class="card-text"><b>Descripción: </b>${data[i].DESCRIPCION}</p>
                             <p class="card-text"><b>Stock: </b>${data[i].STOCK}</p>
                         </div>
                     </div>
