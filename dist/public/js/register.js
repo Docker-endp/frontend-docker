@@ -28,16 +28,16 @@ const register = () => {
     // Validar que nombre y apellido solo contengan letras y no caracteres especiales
     const namePattern = /^[A-Za-z]+$/;
     if (!namePattern.test(name)) {
-        Swal.fire("El nombre solo puede contener letras y no caracteres especiales!");
+        Swal.fire("El nombre no puede contener numeros ni caracteres especiales!");
         return;
     }
     if (!namePattern.test(lastname)) {
-        Swal.fire("El apellido solo puede contener letras y no caracteres especiales!");
+        Swal.fire("El apellido no puede contener numeros ni caracteres especiales!");
         return;
     }
 
     // Validar que el correo contenga '@'
-    if (!email.includes('@')) {
+    if (!email.includes('@gmail.com', '@hotmail.com', '@soy.sena.edu.co')) {
         Swal.fire("El correo NO cumple con los requisitos para ser valido!!");
         return;
     }
@@ -53,11 +53,25 @@ const register = () => {
    // Validar que el celular solo contenga exactamente 10 números
    const celPattern = /^\d{10}$/;
    if (!celPattern.test(cel)) {
-       Swal.fire("El número de documento NO cumple con los requisitos para ser valido!!");
+       Swal.fire("El número de celular NO cumple con los requisitos para ser valido!!");
+       return;
+   }   
+
+
+   // Validar que la fecha de nacimiento sea de un mayor de edad
+   const birthDate = new Date(date);
+   const today = new Date();
+   let age = today.getFullYear() - birthDate.getFullYear();
+   const monthDiff = today.getMonth() - birthDate.getMonth();
+   if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+       age--;
+   }
+   
+   if (age < 18) {
+       Swal.fire("No cumple con la edad requerida para registrarse (mayor de 18 años)!");
        return;
    }
 
-    
     const options = {
         method: "POST",
         headers: {

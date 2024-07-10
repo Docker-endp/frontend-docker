@@ -47,7 +47,7 @@ const eliminar = (event) => {
     console.log(eliminar_id);
   
     Swal.fire({
-      title: "¿Estas seguro que quieres eliminar este usuario?",
+      title: "¿Estas seguro que quieres eliminar este Proveedor?",
       text: "¡No podrás revertir la accion!",
       icon: "warning",
       showCancelButton: true,
@@ -60,7 +60,7 @@ const eliminar = (event) => {
         eliminarApi(eliminar_id);
         Swal.fire({
           title: "¡Borrado!",
-          text: "El usuario ha sido eliminado.",
+          text: "El Proveedor ha sido eliminado.",
           icon: "success",
         });
       }
