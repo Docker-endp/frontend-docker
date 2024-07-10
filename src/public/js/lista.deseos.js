@@ -54,8 +54,8 @@ function redirectToWhatsApp() {
     
     // Crear el mensaje con los nombres de los productos separados por comas
     const mensaje = `¡Hola! :).
-    Estoy super interesad@ en comprar los productos "${nombresProductos.join(', ')}" <3.
-    Me darías más información por favor.`;
+Estoy super interesad@ en comprar los productos "${nombresProductos.join(', ')}" <3.
+Me darías más información por favor.`;
 
     const mensajeCodificado = encodeURIComponent(mensaje);
     const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
