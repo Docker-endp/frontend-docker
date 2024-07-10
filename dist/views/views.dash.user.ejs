@@ -15,10 +15,10 @@
 
         <!-- Barra Principal -->
         <div class="barra-principal">
-            <a href="/dash/editarpu">
-                <div class="img-user"><img src="../img/user.png" alt="" ></div>
+            <a href="/dash/editarpu" onclick="cargarDatosUsuario();">
+                <div class="img-user"><img src="../img/user-editar.png" alt="" ></div>
             </a>
-            <div class="nom-user">Victoria</div>
+            <div class="nom-user"></div>
             <div class="logo-bus"><img src="../img/lupa.png" alt="" class="lupa"></div>
             <div class="barra-busqueda">
                 <input id="datos-busqueda" type="text" placeholder="Buscar...">
@@ -36,10 +36,8 @@
         <div class="barra-half">
             <!-- Menu -->
             <div class="barra-menu" id="menu">
-                <a href="#" class="elemento" target="_blank">Carrtito de Compras</a>
-                <a href="./lista_deseos.html" class="elemento" target="_blank">Lista de Deseos</a>
-                <a href="#" class="elemento" target="_blank">Productos Disponibles</a>
-                <a href="./historial.html" class="elemento" target="_blank">Historial</a>
+                <a href="/dash/ldeseos" class="elemento">Lista de Deseos</a>
+                <a href="/dash/productu" class="elemento">Productos Disponibles</a>
                 <!-- Funciona por medio de la funcion 'MostrarServicio' -->
                 <a href="" class="elemento" onclick="mostrarServicio(event);">Servicio al Cliente</a>
                 <a href="#" class="elemento" target="_blank" onclick="cerrarSesion();">Cerrar Sesión&nbsp;&nbsp;
@@ -59,11 +57,11 @@
                     </div>
                     <div class="gmail">
                         <img src="../img/gmail.png" alt="" class="img1">&nbsp;&nbsp;
-                        <b>licireriaGuachirongo@gmail.com</b>
+                        <b>licoreriaGuachirongo@gmail.com</b>
                     </div>
                     <div class="insta">
                         <img src="../img/instagram.png" alt="" class="img1">&nbsp;&nbsp;
-                        <b>LGuachirongo_SMV</b>
+                        <b>LGuachirongo_VSP</b>
                     </div>
                     .
                 </div>

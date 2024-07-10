@@ -50,3 +50,8 @@ export const agotados = (req, res) =>{
 export const regproveedores = (req, res) =>{
     res.render("views.registrar.proveedores.ejs");
 };
+
+// proveedores
+export const proveedores = (req, res) =>{
+    res.render("views.proveedores.ejs");
+};

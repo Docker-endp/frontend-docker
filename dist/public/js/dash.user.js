@@ -1,5 +1,8 @@
 // Espera a que se cargue completamente la ventana antes de ejecutar el código
 window.onload = function() {
+  obtenerNombreUsuario(); // Llama a la función para obtener el nombre del usuario
+
+  
     // Obtiene el elemento de la flecha para ocultar/mostrar el menú
     var toggleArrow = document.getElementById('toggleArrow');
     // Obtiene el menú
@@ -26,17 +29,18 @@ window.onload = function() {
     main.style.display = 'block';
   }
 
-  // CERRAS SESION
+
+// VERIFICAR INGRESO
+const url = sessionStorage.getItem("urlApi");
+const token = sessionStorage.getItem("token");
+
+  // CERRAR SESION
 const cerrarSesion = () => {
     sessionStorage.setItem("token", "");
     sessionStorage.setItem("urlApi", "");
     window.location.href = '/login';
 }
 
-
-// VERIFICAR INGRESO
-const url = sessionStorage.getItem("urlApi");
-const token = sessionStorage.getItem("token");
 
 const urlComprobar = url + "/api/oauth";
 
@@ -61,29 +65,49 @@ fetch(urlComprobar, options)
       window.location.href = "/login"
     }
   });
-  
-  
-  
 
 
 
 
   
-//   const searchInput = document.getElementById('datos-busqueda');
-//   const searchResults = document.getElementById('result-busqueda');
+
+  // Función para obtener el nombre del usuario
+function obtenerNombreUsuario() {
+  const url = sessionStorage.getItem("urlApi");
+  const token = sessionStorage.getItem("token");
+  const userEmail = sessionStorage.getItem("email"); // Obtiene el correo del usuario desde sessionStorage
+  const urlObtenerUsuario = `${url}/api/user/${userEmail}`;
   
-  // Detectar cuando se presiona la tecla "Enter" en el campo de texto
-  // Agregar un event listener al campo de búsqueda para detectar cuando se escribe
-//   searchInput.addEventListener('keypress', function(event) {
-//       if (event.key === 'Enter') {
-//           const query = searchInput.value.trim(); // Obtener el texto de búsqueda sin espacios al inicio y al final
-//           if (query !== '') {
-//               searchResults.innerHTML = `Buscando resultados para: <strong>${query}</strong>`;
-              
-//           } else {
-//               let mensaje = 'Por favor ingresa un término de búsqueda.';
-//               searchResults.innerHTML = alert(mensaje);
-//           }
-//       }
-//   });
+  const options = {
+      method: "GET",
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+      }
+  };
+
+  fetch(urlObtenerUsuario, options)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data.body[0][0][0].NOMBRE);
+          if (data && data.body[0][0][0].NOMBRE) {
+              // Almacena el nombre del usuario en sessionStorage
+              sessionStorage.setItem('userName', data.body[0][0][0].NOMBRE);
+              // Actualiza el NOMBRE en la interfaz de usuario
+              document.querySelector('.nom-user').textContent = data.body[0][0][0].NOMBRE;
+          } else {
+              // Manejo del error en caso de que no se encuentre el usuario
+              console.error('No se encontró el usuario.');
+          }
+      })
+      .catch(error => {
+          // Manejo del error en caso de que falle la solicitud
+          console.error('Error al obtener los datos del usuario:', error);
+      });
+}
+
+  
+
+
+
   

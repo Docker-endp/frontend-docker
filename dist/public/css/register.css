@@ -14,7 +14,7 @@
   .container {
     width: 100vw;
     height: 100vh;
-    background-image: url(../img/burbujas5.jpg);
+    background-image: url(../img/fon-register-login.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,16 +31,16 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(8, auto);
-    background: rgba(250, 250, 250, 0.3);
+    background:  rgba(245, 234, 234, 0.822);
     backdrop-filter: blur(0.4rem);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    border: 2px solid #F2D064;
+    border: 2px solid #be9947;
   }
   
   /* Título 'Registro' */
   .titulo {
     grid-column: 1 / span 2;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 2rem;
     text-align: center;
     margin-bottom: 20px;
@@ -52,7 +52,7 @@
     height: 83%;
     font-size: 0.9rem;
     border-radius: 5px;
-    background-color: #F2D064;
+    background-color: #be9947;
     border: #000000 1px solid;
     display: flex;
     justify-content: center;
@@ -76,14 +76,9 @@
     border: none;
     border-bottom: 2px solid #F2D064;
     background: none;
-    color: white;
+    color: rgb(32, 32, 32);
   }
   
-  /* Opciones de Sexo */
-  option {
-    background-color: #F2D064;
-    color: #000000;
-  }
   
   /* Términos y Condiciones */
   .check {
@@ -102,7 +97,7 @@
     padding: 5px;
     font-size: 1.2rem;
     border-radius: 10px;
-    background-color: #F2D064;
+    background-color: #be9947;
     border: none;
     color: rgb(0, 0, 0);
     cursor: pointer;

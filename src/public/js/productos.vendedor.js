@@ -236,6 +236,7 @@ const abrirModal = (ID) => {
             if (!data.error) { 
                 // Llenar los campos del formulario en el modal con los datos del producto
                 document.getElementById("editID").value = data.respuesta[0][0][0].ID;
+                document.getElementById("editImg").value = data.respuesta[0][0][0].IMAGEN;
                 document.getElementById("editNombre").value = data.respuesta[0][0][0].NOMBRE;
                 document.getElementById("editDescripcion").value = data.respuesta[0][0][0].DESCRIPCION;
                 document.getElementById("editPrecio").value = data.respuesta[0][0][0].PRECIO;
@@ -265,6 +266,7 @@ const abrirModal = (ID) => {
 // Actualizar producto
 function actualizarProducto() {
   const id = document.getElementById("editID").value;
+  const img = document.getElementById("editImg").value;
   const nombre = document.getElementById("editNombre").value;
   const descripcion = document.getElementById("editDescripcion").value;
   const precio = document.getElementById("editPrecio").value;
@@ -273,6 +275,7 @@ function actualizarProducto() {
   const idproveedores = document.getElementById("editidproveedores").value;
 
   fetch(urlApi, {
+    
       method: 'PUT',
       headers: {
           'Content-Type': 'application/json',
@@ -280,6 +283,7 @@ function actualizarProducto() {
       body: JSON.stringify({
           id: id,
           nombre: nombre,
+          imagen: img,
           descripcion: descripcion,
           precio: precio,
           cant_inicial: canti,
@@ -288,6 +292,7 @@ function actualizarProducto() {
       })
   })
   .then(data => {
+    console.log(data);
     document.getElementById("editModal").style.display = "none";
     Swal.fire({
       icon: 'success',
@@ -295,7 +300,7 @@ function actualizarProducto() {
       showConfirmButton: false,
       timer: 1500
     }).then(() => {
-      location.reload(); // Recargar la página después de cerrar el mensaje de éxito
+      window.location.href = '/dash/lproductos';
     });
   })
   .catch(error => {

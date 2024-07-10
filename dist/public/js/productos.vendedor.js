@@ -1,7 +1,7 @@
 // tabla
 let url = sessionStorage.getItem("urlApi");
 const urlApi = url + "/api/product"
-
+console.log(urlApi);
 // MOSTRAR
 fetch(urlApi)
     .then(res => res.json())
@@ -25,12 +25,12 @@ const mostrar = (data) => {
             <li>
                     <div class="card">
                         <div class="cont-img">
-                            <img src="../img/licorF1N1.png" alt="Producto">
+                            <img src="${data[i].IMAGEN}" alt="Producto">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">${data[i].NOMBRE}</h5>
                             <p class="card-text">${data[i].ID}</p>
-                            <p class="card-text">${data[i].DESCRIPCION.substring(0, 20) + '...'}</p>
+                            <p class="card-text">${data[i].DESCRIPCION}</p>
                             <p class="card-text"><b>Precio: </b> ${data[i].PRECIO}</p>
                             <p class="card-text"><b>Cantidad Inicial: </b>${data[i].CANT_INICIAL}</p>
                             <p class="card-text"><b>P.Comprados: </b>${data[i].COMPRADOS}</p>
@@ -43,12 +43,9 @@ const mostrar = (data) => {
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 39 7"
-                                  class="bin-top"
-                                >
+                                  class="bin-top">
                                   <line stroke-width="4" stroke="white" y2="5" x2="39" y1="5"></line>
-                                  <line
-                                    stroke-width="3"
-                                    stroke="white"
+                                  <line stroke-width="3" stroke="white"
                                     y2="1.5"
                                     x2="26.0357"
                                     y1="1.5"
@@ -89,19 +86,15 @@ const mostrar = (data) => {
                               &nbsp
                               &nbsp
                               &nbsp
-
-                                <!-- Lista de recomendaciones -->
-                                <button class="cssbuttons-io-button" title="Añadir a lista de recomendaciones" onclick="lrecomendaciones();">
-                                  <svg height="25" width="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path></svg>
-                                </button>
-                                &nbsp
-                                &nbsp
-                                &nbsp
+                              &nbsp
+                              &nbsp
 
                                 <!-- Productos disponibles -->
                                 <button class="cssbuttons-io-button" title="Añadir a Productos Disponibles" onclick="pdispobibles();">
                                   <svg height="25" width="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path></svg>
                                 </button>
+                                &nbsp
+                                &nbsp
                                 &nbsp
                                 &nbsp
                                 &nbsp
@@ -243,6 +236,7 @@ const abrirModal = (ID) => {
             if (!data.error) { 
                 // Llenar los campos del formulario en el modal con los datos del producto
                 document.getElementById("editID").value = data.respuesta[0][0][0].ID;
+                document.getElementById("editImg").value = data.respuesta[0][0][0].IMAGEN;
                 document.getElementById("editNombre").value = data.respuesta[0][0][0].NOMBRE;
                 document.getElementById("editDescripcion").value = data.respuesta[0][0][0].DESCRIPCION;
                 document.getElementById("editPrecio").value = data.respuesta[0][0][0].PRECIO;
@@ -272,6 +266,7 @@ const abrirModal = (ID) => {
 // Actualizar producto
 function actualizarProducto() {
   const id = document.getElementById("editID").value;
+  const img = document.getElementById("editImg").value;
   const nombre = document.getElementById("editNombre").value;
   const descripcion = document.getElementById("editDescripcion").value;
   const precio = document.getElementById("editPrecio").value;
@@ -280,6 +275,7 @@ function actualizarProducto() {
   const idproveedores = document.getElementById("editidproveedores").value;
 
   fetch(urlApi, {
+    
       method: 'PUT',
       headers: {
           'Content-Type': 'application/json',
@@ -287,6 +283,7 @@ function actualizarProducto() {
       body: JSON.stringify({
           id: id,
           nombre: nombre,
+          imagen: img,
           descripcion: descripcion,
           precio: precio,
           cant_inicial: canti,
@@ -295,6 +292,7 @@ function actualizarProducto() {
       })
   })
   .then(data => {
+    console.log(data);
     document.getElementById("editModal").style.display = "none";
     Swal.fire({
       icon: 'success',
@@ -302,7 +300,7 @@ function actualizarProducto() {
       showConfirmButton: false,
       timer: 1500
     }).then(() => {
-      location.reload(); // Recargar la página después de cerrar el mensaje de éxito
+      window.location.href = '/dash/lproductos';
     });
   })
   .catch(error => {

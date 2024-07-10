@@ -167,18 +167,34 @@ function generarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
+  // Obtener la fecha y hora actual del equipo
+  const now = new Date();
+  const fecha = now.toLocaleDateString();
+  const hora = now.toLocaleTimeString();
+
+  // Agregar el título al documento
+  doc.setFontSize(18);
+  doc.text('Clientes Registrados', 14, 22);
+
+  // Agregar la fecha y hora al documento
+  doc.setFontSize(12);
+  doc.text(`Fecha: ${fecha} Hora: ${hora}`, 14, 32);
+
+  // Generar la tabla con los datos
   doc.autoTable({ 
+      startY: 40,
       head: [['ID', 'NOMBRE DEL CLIENTE', 'CORREO', 'CELULAR']],
       body: Array.from(document.querySelectorAll("#data tr")).map(tr => 
           Array.from(tr.querySelectorAll("td")).map(td => td.innerText)
       ),
       headStyles: {
-            fillColor: [190, 153, 71] // Color de fondo del encabezado en formato RGB
-        },
+          fillColor: [190, 153, 71] // Color de fondo del encabezado en formato RGB
+      },
   });
 
   doc.save('clientes.pdf');
 }
+
 
 
 // Función para obtener el nombre del usuario

@@ -10,12 +10,13 @@ const registerP = () => {
 
     // Obtener valores de los campos del formulario
     const name = document.getElementById('name').value;
-    const img = document.getElementById('img').files[0]; // Obtener el archivo de imagen
+    const img = document.getElementById('img').value; // Obtener el archivo de imagen
     const description = document.getElementById('descripcion').value;
     const precio = document.getElementById('precio').value;
     const canti = document.getElementById('cant_inicial').value;
     const comprados = document.getElementById('comprados').value;
     const id_proveedores = document.getElementById('id_proveedores').value;
+    console.log(img);
 
     console.log("Valores obtenidos:", { name, img, description, precio, canti, comprados, id_proveedores });
 

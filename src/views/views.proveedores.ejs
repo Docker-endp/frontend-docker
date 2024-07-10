@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/proveedores.css">
+    <title>Proveedores</title>
+</head>
+<body>
+    
+    <div class="content">
+         
+
+        <!-- Barra Secundaria -->
+        <div class="barra-secundaria">
+            <!-- tituo principla de la pagina -->
+            <div class="img-page">
+               <img src="../img/dataflow-poppins-orange-.png" alt="">
+            </div>
+            <!-- boton -->
+            <div class="btn-perfil">
+                <a href="/dash/perfilv" class="elemento">Mi Perfil</a>
+            </div>
+            <div class="reporte">
+                <button class="btn-reporte" onclick="generarPDF();">Reporte Proveedores</button>
+            </div>
+        </div>
+
+        <div class="title">
+            <div class="nom-page">
+                <p><h3>Nuestros Proveedores</h3></p>
+            </div>
+        </div>
+
+        <!-- clientes -->
+         <div class="clientes">
+            <table border="1">
+                <!-- titulos -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre de la Empresa</th>
+                        <th>Número de Contacto</th>
+                        <th>Sitio Web</th>
+                        <th>Acciones</th>
+
+                    </tr>
+                </thead>
+                <tbody id="data">
+                    <!-- <tr>
+                        <td>Fila 1, Celda 1</td>
+                        <td>Fila 1, Celda 2</td>
+                        <td>Fila 1, Celda 3</td>
+                        <td> <button class="btn-trash"> <img src="../img/borrar.png" alt="" class="trash"> </button> </td>
+                    </tr> -->
+                    
+                    
+                </tbody>
+            </table>
+
+            
+            <!-- Contenedor de la ventana eliminar -->
+        
+           
+         </div>
+         
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/proveedores.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>

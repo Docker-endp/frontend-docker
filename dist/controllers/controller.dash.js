@@ -10,7 +10,17 @@ export const modificarPU = (req, res) =>{
     res.render("views.editarperfilU.ejs");
 };
 
+// Productos Disponibles Usuarios
+export const productUser = (req, res) =>{
+    res.render("views.productos.usuario.ejs");
+};
 
+// Productos Disponibles Usuarios
+export const ldeseos = (req, res) =>{
+    res.render("views.lista.deseos.ejs");
+};
+
+// ----------------------------------------------------------------------------- //
 // RUTAS VENDEDOR
 export const perfilVendedor = (req, res) =>{
     res.render("views.dash.vendedor.ejs");
@@ -34,4 +44,14 @@ export const listarP = (req, res) =>{
 // Productos Agotados
 export const agotados = (req, res) =>{
     res.render("views.productos.agotados.ejs");
+};
+
+// registro de proveedores
+export const regproveedores = (req, res) =>{
+    res.render("views.registrar.proveedores.ejs");
+};
+
+// proveedores
+export const proveedores = (req, res) =>{
+    res.render("views.proveedores.ejs");
 };

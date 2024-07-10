@@ -57,7 +57,7 @@ const login = () => {
                     if(data.body[1] == "vendedorlicoreria@gmail.com"){
                         window.location.href = '/dash/perfilv';
                     } else {
-                        window.location.href = '/dash/perfilu';
+                        window.location.href = '/dash/productu';
                     }
                     
                 }, 1200);

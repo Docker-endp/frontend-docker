@@ -1,3 +1,7 @@
+  // Espera a que se cargue completamente la ventana antes de ejecutar el código
+  window.onload = function() {
+    obtenerNombreUsuario(); // Llama a la función para obtener el nombre del usuario
+}
 
 // tabla
 let url = sessionStorage.getItem("urlApi");
@@ -32,6 +36,7 @@ const mostrar = (data) => {
                 <button class="button" onclick="eliminar(event);">
                 ELIMINAR
                 </button>
+                <button class="button-reporte" onclick="generarReporteIndividual(${data[i].ID}, '${data[i].NOMBRE}', '${data[i].CORREO}', '${data[i].CELULAR}')">REPORTE</button>
                 </td>
             </tr>                        
     `;
@@ -138,3 +143,91 @@ inputBusqueda.addEventListener('keydown', function(event) {
           .catch(error => console.log(error));
   }
 });
+
+
+// Función para generar el PDF de una fila individual
+function generarReporteIndividual(id, nombre, correo, celular) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  doc.autoTable({
+      head: [['ID', 'NOMBRE DEL CLIENTE', 'CORREO', 'CELULAR']],
+      body: [[id, nombre, correo, celular]],
+      headStyles: {
+          fillColor: [190, 153, 71] // Color de fondo del encabezado en formato RGB
+      },
+  });
+
+  doc.save(`cliente_ID:_${id}.pdf`);
+}
+
+
+// Función para generar el PDF
+function generarPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Obtener la fecha y hora actual del equipo
+  const now = new Date();
+  const fecha = now.toLocaleDateString();
+  const hora = now.toLocaleTimeString();
+
+  // Agregar el título al documento
+  doc.setFontSize(18);
+  doc.text('Clientes Registrados', 14, 22);
+
+  // Agregar la fecha y hora al documento
+  doc.setFontSize(12);
+  doc.text(`Fecha: ${fecha} Hora: ${hora}`, 14, 32);
+
+  // Generar la tabla con los datos
+  doc.autoTable({ 
+      startY: 40,
+      head: [['ID', 'NOMBRE DEL CLIENTE', 'CORREO', 'CELULAR']],
+      body: Array.from(document.querySelectorAll("#data tr")).map(tr => 
+          Array.from(tr.querySelectorAll("td")).map(td => td.innerText)
+      ),
+      headStyles: {
+          fillColor: [190, 153, 71] // Color de fondo del encabezado en formato RGB
+      },
+  });
+
+  doc.save('clientes.pdf');
+}
+
+
+
+// Función para obtener el nombre del usuario
+function obtenerNombreUsuario() {
+  const url = sessionStorage.getItem("urlApi");
+  const token = sessionStorage.getItem("token");
+  const userEmail = sessionStorage.getItem("email"); // Obtiene el correo del usuario desde sessionStorage
+  const urlObtenerUsuario = `${url}/api/user/${userEmail}`;
+  
+  const options = {
+      method: "GET",
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+      }
+  };
+
+  fetch(urlObtenerUsuario, options)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data.body[0][0][0].NOMBRE);
+          if (data && data.body[0][0][0].NOMBRE) {
+              // Almacena el nombre del usuario en sessionStorage
+              sessionStorage.setItem('userName', data.body[0][0][0].NOMBRE);
+              // Actualiza el NOMBRE en la interfaz de usuario
+              document.querySelector('.nom-user').textContent = data.body[0][0][0].NOMBRE;
+          } else {
+              // Manejo del error en caso de que no se encuentre el usuario
+              console.error('No se encontró el usuario.');
+          }
+      })
+      .catch(error => {
+          // Manejo del error en caso de que falle la solicitud
+          console.error('Error al obtener los datos del usuario:', error);
+      });
+}

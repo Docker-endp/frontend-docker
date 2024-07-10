@@ -9,6 +9,17 @@ body {
     overflow-x: hidden;
 }
 
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el color y la opacidad aquí */
+    z-index: -1; /* Asegura que la capa de opacidad esté detrás del contenido */
+}
+
 /* Contenedor principal */
 .container {
     width: 100vw;
@@ -65,7 +76,7 @@ body {
     background-color: #f2ce632c;
     border-bottom: #be9947 solid 2px;
     display: grid;
-    grid-template-columns: 2fr 2fr 3fr 1fr;
+    grid-template-columns: 1fr 1fr 3fr 1fr;
     grid-template-rows: 1fr;
 }
 
@@ -86,7 +97,17 @@ body {
 a {
     text-decoration: none;
 }
+button{
+    background: none;
+    border: none;
+    color: white;
+    border: solid white 3px;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 22px;
 
+}
 /* Boton 'mi perfil' */
 .btn-bd a,
 .btn-perfil a {
@@ -96,6 +117,12 @@ a {
     padding: 10px;
     font-weight: bold;
     font-size: 25px;
+}
+
+button:hover{
+    transition: 400ms;
+    background-color: #f2ce6385;
+    border: solid #be9947 4px;
 }
 
 /* Boton 'mi perfil' al pasar el cursor */
@@ -164,7 +191,7 @@ a {
 .card {
     width: 230px;
     height: 350px;
-    background-color: #be9947;
+    background-color: #cfae40;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
