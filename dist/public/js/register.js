@@ -1,8 +1,12 @@
 // URL
 const url = document.getElementById('url').value;
 sessionStorage.setItem("urlApi", url)
+
+const token = sessionStorage.getItem("token")
 const url2 = sessionStorage.getItem("urlApi");
-console.log("url2 "+ url2)
+const endpoint = "/api/user";
+const urlend = url2 + endpoint;
+console.log( url2)
 
 // datos
 const register = () => {
@@ -53,13 +57,12 @@ const register = () => {
        return;
    }
 
-    const urlApi = url2 + "/api/user";
-    console.log(urlApi);
     
     const options = {
         method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({
             nombre: name,
@@ -72,10 +75,12 @@ const register = () => {
         })
     };
 
-    fetch(urlApi, options)
+    fetch(urlend, options)
         .then(res => res.json())
         .then(data => {
+
             console.log(data);
+
             if (data.error == false) {
                 // alerta usuario registrado
                 Swal.fire({

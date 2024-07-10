@@ -48,18 +48,24 @@ const modificar = () => {
     const email = document.getElementById('email').value;
     const doc = document.getElementById('doc').value;
     const password = document.getElementById('password').value;
-    const cel = document.getElementById('cel').value;
+    const cel = document.getElementById('cel').value.trim();
+
+    console.log("Values collected:", { name, lastname, email, doc, password, cel });
 
     // Verificar que los campos no estén vacíos
     if (!name || !lastname || !email || !doc  || !password || !cel) {
         Swal.fire("Hay campos vacíos!");
+        console.log("Empty fields detected");
         return;
     }
+
+    console.log("All fields are filled. Proceeding with fetch call...");
 
     fetch(url + "/api/user", {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({
             nombre: name,
@@ -70,19 +76,28 @@ const modificar = () => {
             celular: cel,
         })
     })
+    .then(response => {
+        console.log("Fetch response:", response);
+        return response.json(); // Convert the response to JSON
+    })
     .then(data => {
-      Swal.fire({
-        icon: 'success',
-        title: ' Tu perfil fue actualizado con éxito',
-        showConfirmButton: false,
-        timer: 1500
-      })
+        console.log("Response data:", data);
+        Swal.fire({
+            icon: 'success',
+            title: 'Tu perfil fue actualizado con éxito',
+            showConfirmButton: false,
+            timer: 1500
+        });
     })
     .catch(error => {
-      console.error('Error:', error);
-      alert('Error al actualizar el producto');
+        console.error('Error:', error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error al actualizar el perfil',
+            text: error.message,
+        });
     });
-  }
+};
 
     
 
