@@ -37,7 +37,8 @@ const register = () => {
     }
 
     // Validar que el correo contenga '@'
-    if (!email.includes('@gmail.com', '@hotmail.com', '@soy.sena.edu.co')) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
         Swal.fire("El correo NO cumple con los requisitos para ser valido!!");
         return;
     }

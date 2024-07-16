@@ -48,6 +48,7 @@ const modificar = () => {
     const email = document.getElementById('email').value;
     const doc = document.getElementById('doc').value;
     const password = document.getElementById('password').value;
+    const password2 = document.getElementById('password2').value;
     const cel = document.getElementById('cel').value.trim();
 
     console.log("Values collected:", { name, lastname, email, doc, password, cel });
@@ -56,6 +57,12 @@ const modificar = () => {
     if (!name || !lastname || !email || !doc  || !password || !cel) {
         Swal.fire("Hay campos vacíos!");
         console.log("Empty fields detected");
+        return;
+    }
+
+    if (password !== password2) {
+        Swal.fire("Las contraseñas no coinciden!");
+        console.log("Passwords do not match");
         return;
     }
 
@@ -87,6 +94,10 @@ const modificar = () => {
             title: 'Tu perfil fue actualizado con éxito',
             showConfirmButton: false,
             timer: 1500
+        }).then(() => {
+            // Limpiar la sessionStorage y redirigir al usuario a la página de inicio de sesión
+            sessionStorage.clear();
+            window.location.href = '/login'; // Cambia '/login' por la URL de tu página de inicio de sesión
         });
     })
     .catch(error => {
