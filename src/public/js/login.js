@@ -42,7 +42,7 @@ const login = () => {
         .then(res => res.json())
         .then(data => {
             if(data.error==true){
-                
+                console.log(data);
                 Swal.fire({
                     icon: "error",
                     title: "Tienes un campo incorrecto",
@@ -50,11 +50,11 @@ const login = () => {
                     timer: 1500
                 });
             }else{
-                console.log(data);
                 sessionStorage.setItem("token", data.body);
                 setTimeout(function() {
                     
                     if(data.body[1] == "vendedorlicoreria@gmail.com"){
+                        console.log(data.body[1]);
                         window.location.href = '/dash/perfilv';
                     } else {
                         window.location.href = '/dash/productu';
