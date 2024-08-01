@@ -5,6 +5,7 @@ export const perfilUsuario = (req, res) =>{
     res.render("views.dash.user.ejs");
 };
 
+
 // Editar perfil
 export const modificarPU = (req, res) =>{
     res.render("views.editarperfilU.ejs");
